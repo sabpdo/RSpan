@@ -27,7 +27,7 @@ psychoJS.openWindow({
 
 // store info about the experiment session:
 let expName = 'RSpan';  // from the Builder filename that created this script
-let expInfo = {'participant': '', 'session': '001'};
+let expInfo = {'participant': '', 'session': '001', 'age': '', 'sex': ''};
 
 // schedule the experiment:
 psychoJS.schedule(psychoJS.gui.DlgFromDict({
@@ -67,10 +67,10 @@ flowScheduler.add(PractSenInst2RoutineEnd());
 flowScheduler.add(PracSenInst3RoutineBegin());
 flowScheduler.add(PracSenInst3RoutineEachFrame());
 flowScheduler.add(PracSenInst3RoutineEnd());
-const trialsLoopScheduler = new Scheduler(psychoJS);
-flowScheduler.add(trialsLoopBegin, trialsLoopScheduler);
-flowScheduler.add(trialsLoopScheduler);
-flowScheduler.add(trialsLoopEnd);
+const practiceSentenceLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(practiceSentenceLoopBegin, practiceSentenceLoopScheduler);
+flowScheduler.add(practiceSentenceLoopScheduler);
+flowScheduler.add(practiceSentenceLoopEnd);
 flowScheduler.add(RSPANpracticeInstruct1_2RoutineBegin());
 flowScheduler.add(RSPANpracticeInstruct1_2RoutineEachFrame());
 flowScheduler.add(RSPANpracticeInstruct1_2RoutineEnd());
@@ -83,6 +83,13 @@ flowScheduler.add(feedbackinstructRoutineEnd());
 flowScheduler.add(feedbackinstruct2RoutineBegin());
 flowScheduler.add(feedbackinstruct2RoutineEachFrame());
 flowScheduler.add(feedbackinstruct2RoutineEnd());
+const trialLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(trialLoopBegin, trialLoopScheduler);
+flowScheduler.add(trialLoopScheduler);
+flowScheduler.add(trialLoopEnd);
+flowScheduler.add(feedback_2RoutineBegin());
+flowScheduler.add(feedback_2RoutineEachFrame());
+flowScheduler.add(feedback_2RoutineEnd());
 flowScheduler.add(quitPsychoJS, '', true);
 
 // quit if user presses Cancel in dialog box:
@@ -92,11 +99,13 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'practiceLetter.xlsx', 'path': 'practiceLetter.xlsx'}
+    {'name': 'sentenceProblems.xlsx', 'path': 'sentenceProblems.xlsx'},
+    {'name': 'practiceLetter.xlsx', 'path': 'practiceLetter.xlsx'},
+    {'name': 'SentenceProblems2.xlsx', 'path': 'SentenceProblems2.xlsx'}
   ]
 });
 
-psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
+psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.DEBUG);
 
 function updateInfo() {
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
@@ -235,7 +244,8 @@ function experimentInit() {
   letterAppear = new visual.TextStim({
     win: psychoJS.window,
     name: 'letterAppear',
-    text: 'default text',
+    text: /*  */
+  ,
     font: 'Times New Roman',
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
@@ -245,16 +255,27 @@ function experimentInit() {
   
   import {choice} from 'numpy/random';
   
+  letterAppear_2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'letterAppear_2',
+    text: /*  */
+  ,
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -2.0 
+  });
+  
   // Initialize components for Routine "practiceRecall"
   practiceRecallClock = new util.Clock();
   mouseClear = new core.Mouse({
     win: psychoJS.window,
   });
   mouseClear.mouseClock = new util.Clock();
-  mouseBlank = new core.Mouse({
-    win: psychoJS.window,
-  });
-  mouseBlank.mouseClock = new util.Clock();
+  correctLettersPractice = 0;
+  correctLettersTrial = 0;
+  
   mouseExit = new core.Mouse({
     win: psychoJS.window,
   });
@@ -269,7 +290,7 @@ function experimentInit() {
     ori: 0, pos: [0.4, (- 0.4)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color([1, 1, 1]),
-    opacity: 1, depth: -5, interpolate: true,
+    opacity: 1, depth: -4, interpolate: true,
   });
   
   gatherResponseText = new visual.TextStim({
@@ -280,7 +301,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0, 0.4], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -6.0 
+    depth: -5.0 
   });
   
   Fbutton = new visual.Rect ({
@@ -289,7 +310,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), 0.3],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -7, interpolate: true,
+    opacity: 1, depth: -6, interpolate: true,
   });
   
   F_text = new visual.TextStim({
@@ -300,7 +321,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), 0.3], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -8.0 
+    depth: -7.0 
   });
   
   Pbutton = new visual.Rect ({
@@ -309,7 +330,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), 0.2],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -9, interpolate: true,
+    opacity: 1, depth: -8, interpolate: true,
   });
   
   Qbutton = new visual.Rect ({
@@ -318,7 +339,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), 0.1],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -10, interpolate: true,
+    opacity: 1, depth: -9, interpolate: true,
   });
   
   Jbutton = new visual.Rect ({
@@ -327,7 +348,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), 0.0],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -11, interpolate: true,
+    opacity: 1, depth: -10, interpolate: true,
   });
   
   Hbutton = new visual.Rect ({
@@ -336,7 +357,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), (- 0.1)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -12, interpolate: true,
+    opacity: 1, depth: -11, interpolate: true,
   });
   
   Kbutton = new visual.Rect ({
@@ -345,7 +366,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.3), (- 0.2)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -13, interpolate: true,
+    opacity: 1, depth: -12, interpolate: true,
   });
   
   Tbutton = new visual.Rect ({
@@ -354,7 +375,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, 0.3],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -14, interpolate: true,
+    opacity: 1, depth: -13, interpolate: true,
   });
   
   Sbutton = new visual.Rect ({
@@ -363,7 +384,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, 0.2],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -15, interpolate: true,
+    opacity: 1, depth: -14, interpolate: true,
   });
   
   Nbutton = new visual.Rect ({
@@ -372,7 +393,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, 0.1],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -16, interpolate: true,
+    opacity: 1, depth: -15, interpolate: true,
   });
   
   Rbutton = new visual.Rect ({
@@ -381,7 +402,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, 0.0],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -17, interpolate: true,
+    opacity: 1, depth: -16, interpolate: true,
   });
   
   Ybutton = new visual.Rect ({
@@ -390,7 +411,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, (- 0.1)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -18, interpolate: true,
+    opacity: 1, depth: -17, interpolate: true,
   });
   
   Lbutton = new visual.Rect ({
@@ -399,7 +420,7 @@ function experimentInit() {
     ori: 0, pos: [0.2, (- 0.2)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color(1.0),
-    opacity: 1, depth: -19, interpolate: true,
+    opacity: 1, depth: -18, interpolate: true,
   });
   
   clearButton = new visual.Rect ({
@@ -408,7 +429,7 @@ function experimentInit() {
     ori: 0, pos: [0, (- 0.4)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color('white'),
-    opacity: 1, depth: -20, interpolate: true,
+    opacity: 1, depth: -19, interpolate: true,
   });
   
   exitButton = new visual.Rect ({
@@ -417,7 +438,7 @@ function experimentInit() {
     ori: 0, pos: [(- 0.4), (- 0.4)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
     fillColor: new util.Color('white'),
-    opacity: 1, depth: -21, interpolate: true,
+    opacity: 1, depth: -20, interpolate: true,
   });
   
   exitText = new visual.TextStim({
@@ -428,7 +449,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.4), (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('black'),  opacity: 1,
-    depth: -22.0 
+    depth: -21.0 
   });
   
   clearText = new visual.TextStim({
@@ -439,7 +460,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('black'),  opacity: 1,
-    depth: -23.0 
+    depth: -22.0 
   });
   
   P_text = new visual.TextStim({
@@ -450,7 +471,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), 0.2], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -24.0 
+    depth: -23.0 
   });
   
   Q_text = new visual.TextStim({
@@ -461,7 +482,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), 0.1], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -25.0 
+    depth: -24.0 
   });
   
   J_text = new visual.TextStim({
@@ -472,7 +493,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), 0.0], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -26.0 
+    depth: -25.0 
   });
   
   H_text = new visual.TextStim({
@@ -483,7 +504,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), (- 0.1)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -27.0 
+    depth: -26.0 
   });
   
   K_text = new visual.TextStim({
@@ -494,7 +515,7 @@ function experimentInit() {
     units: undefined, 
     pos: [(- 0.23), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -28.0 
+    depth: -27.0 
   });
   
   T_text = new visual.TextStim({
@@ -505,7 +526,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, 0.3], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -29.0 
+    depth: -28.0 
   });
   
   S_text = new visual.TextStim({
@@ -516,7 +537,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, 0.2], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -30.0 
+    depth: -29.0 
   });
   
   N_text = new visual.TextStim({
@@ -527,7 +548,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, 0.1], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -31.0 
+    depth: -30.0 
   });
   
   R_text = new visual.TextStim({
@@ -538,7 +559,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, 0.0], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -32.0 
+    depth: -31.0 
   });
   
   Y_text = new visual.TextStim({
@@ -549,7 +570,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, (- 0.1)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -33.0 
+    depth: -32.0 
   });
   
   L_text = new visual.TextStim({
@@ -560,7 +581,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.27, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: -34.0 
+    depth: -33.0 
   });
   
   blankText = new visual.TextStim({
@@ -571,7 +592,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0.4, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('black'),  opacity: 1,
-    depth: -35.0 
+    depth: -34.0 
   });
   
   answer1 = new visual.TextStim({
@@ -581,9 +602,9 @@ function experimentInit() {
   ,
     font: 'Times New Roman',
     units: undefined, 
-    pos: [0.05, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    pos: [(- 0.05), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('grey'),  opacity: 1,
-    depth: -36.0 
+    depth: -35.0 
   });
   
   answer2 = new visual.TextStim({
@@ -593,11 +614,15 @@ function experimentInit() {
   ,
     font: 'Times New Roman',
     units: undefined, 
-    pos: [(- 0.05), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    pos: [0.05, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
     color: new util.Color('grey'),  opacity: 1,
-    depth: -37.0 
+    depth: -36.0 
   });
   
+  mouseBlank = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouseBlank.mouseClock = new util.Clock();
   // Initialize components for Routine "PractSentInst1"
   PractSentInst1Clock = new util.Clock();
   instr_4 = new visual.TextStim({
@@ -710,8 +735,25 @@ function experimentInit() {
     win: psychoJS.window,
   });
   mouse.mouseClock = new util.Clock();
+  avgTime = 0;
+  totalTime = 0;
+  
+  text_3 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text_3',
+    text: /*  */
+  ,
+    font: 'Arial',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -4.0 
+  });
+  
   // Initialize components for Routine "sentenceResponse"
   sentenceResponseClock = new util.Clock();
+  totalCorrectPractice = 0;
+  
   senseText = new visual.TextStim({
     win: psychoJS.window,
     name: 'senseText',
@@ -728,7 +770,7 @@ function experimentInit() {
     width: [0.15, 0.15][0], height: [0.15, 0.15][1],
     ori: 0, pos: [(- 0.2), (- 0.2)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
-    fillColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
     opacity: 1, depth: -2, interpolate: true,
   });
   
@@ -748,7 +790,7 @@ function experimentInit() {
     width: [0.15, 0.15][0], height: [0.15, 0.15][1],
     ori: 0, pos: [0.2, (- 0.2)],
     lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
-    fillColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
   
@@ -767,16 +809,17 @@ function experimentInit() {
     win: psychoJS.window,
   });
   mouse12.mouseClock = new util.Clock();
-  sentenceFeedback1 = new visual.TextStim({
+  // Initialize components for Routine "feedback"
+  feedbackClock = new util.Clock();
+  sentenceFeedback2 = new visual.TextStim({
     win: psychoJS.window,
-    name: 'sentenceFeedback1',
-    text: /*  */
-  ,
+    name: 'sentenceFeedback2',
+    text: 'default text',
     font: 'Times New Roman',
     units: undefined, 
-    pos: [0, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
-    color: new util.Color('white'),  opacity: 1,
-    depth: -7.0 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('blue'),  opacity: 1,
+    depth: 0.0 
   });
   
   // Initialize components for Routine "RSPANpracticeInstruct1_2"
@@ -784,7 +827,7 @@ function experimentInit() {
   instr_7 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr_7',
-    text: 'Now you will practice doing both parts of the experiment at the same time. \n\nIn the next practice set, you will be given one sentence to read. Once you make your decision about the sentence, a letter will appear on the screen. Try and remember the letter.\n\nIn the previous section where you only read the sentences, the computer computed your average time to read the sentences. If you take longer than your average time, the computter will automatically move you onto the ler part, thus skipping the True or False part and will count that problem as a sentence error. Thefore it is a VERY important to read the sentences as quickly and as accurately as possible. ',
+    text: 'Now you will practice doing both parts of the experiment at the same time. \n\nIn the next practice set, you will be given one sentence to read. Once you make your decision about the sentence, a letter will appear on the screen. Try and remember the letter.\n\nIn the previous section where you only read the sentences, the computer computed your average time to read the sentences. If you take longer than your average time, the computer will automatically move you onto the next part, thus skipping the True or False part and will count that problem as a sentence error. Thefore it is a VERY important to read the sentences as quickly and as accurately as possible. ',
     font: 'Times New Roman',
     units: undefined, 
     pos: [0, 0], height: 0.04,  wrapWidth: undefined, ori: 0,
@@ -840,7 +883,7 @@ function experimentInit() {
   instr_9 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr_9',
-    text: 'After the recall screen, you will be given feedback about your performance regarding both tthe number of letters recalled and tthe percent correct on the sentence problems.',
+    text: 'After the recall screen, you will be given feedback about your performance regarding both the number of letters recalled and the percent correct on the sentence problems.',
     font: 'Times New Roman',
     units: undefined, 
     pos: [0, 0], height: 0.04,  wrapWidth: undefined, ori: 0,
@@ -868,7 +911,7 @@ function experimentInit() {
   instr_10 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr_10',
-    text: 'During the feedback, you will see a number in red in the top right of the screen. \nThis indicates your percent correct for the sentence problems for the entire experiment.\n\nIt is VERY imporatnt for you to keep this at least an 85%.\n\nFor our purposes, we can only use data where thet participant was at least 85% accurate on the sentences.\n\nTherefore, try to perform at least an 85% on the sentence problems WHILE doing your best to recall as many letters as possible.',
+    text: 'During the feedback, you will see a number in red in the top right of the screen. \nThis indicates your percent correct for the sentence problems for the entire experiment.\n\nIt is VERY important for you to keep this at least an 85%.\n\nFor our purposes, we can only use data where the participant was at least 85% accurate on the sentences.\n\nTherefore, try to perform at least an 85% on the sentence problems WHILE doing your best to recall as many letters as possible.',
     font: 'Times New Roman',
     units: undefined, 
     pos: [0, 0], height: 0.04,  wrapWidth: undefined, ori: 0,
@@ -891,6 +934,518 @@ function experimentInit() {
     win: psychoJS.window,
   });
   mouse_11.mouseClock = new util.Clock();
+  // Initialize components for Routine "sentence2"
+  sentence2Clock = new util.Clock();
+  sentenceText2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'sentenceText2',
+    text: 'default text',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: 0.0 
+  });
+  
+  mouse_12 = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouse_12.mouseClock = new util.Clock();
+  continue_13 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'continue_13',
+    text: 'When you have read the sentence, click the mouse to continue.',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -2.0 
+  });
+  
+  timerReading = new core.Clock();
+  avgTime = 0;
+  totalTime = 0;
+  
+  text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text',
+    text: /*  */
+  ,
+    font: 'Arial',
+    units: undefined, 
+    pos: [0.4, (- 0.4)], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -4.0 
+  });
+  
+  // Initialize components for Routine "sentenceResponseTrial"
+  sentenceResponseTrialClock = new util.Clock();
+  totalCorrectSentenceTrial = 0;
+  
+  senseText_2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'senseText_2',
+    text: 'This sentence makes sense.',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0.2], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -1.0 
+  });
+  
+  trueButton_2 = new visual.Rect ({
+    win: psychoJS.window, name: 'trueButton_2', 
+    width: [0.15, 0.15][0], height: [0.15, 0.15][1],
+    ori: 0, pos: [(- 0.2), (- 0.2)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -2, interpolate: true,
+  });
+  
+  trueText_2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'trueText_2',
+    text: 'TRUE',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.2), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('black'),  opacity: 1,
+    depth: -3.0 
+  });
+  
+  falseButton_2 = new visual.Rect ({
+    win: psychoJS.window, name: 'falseButton_2', 
+    width: [0.15, 0.15][0], height: [0.15, 0.15][1],
+    ori: 0, pos: [0.2, (- 0.2)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -4, interpolate: true,
+  });
+  
+  falseText_2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'falseText_2',
+    text: 'FALSE',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.2, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('black'),  opacity: 1,
+    depth: -5.0 
+  });
+  
+  mouse12_2 = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouse12_2.mouseClock = new util.Clock();
+  // Initialize components for Routine "letterTrial_2"
+  letterTrial_2Clock = new util.Clock();
+  letterAppear_3 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'letterAppear_3',
+    text: /*  */
+  ,
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: 0.0 
+  });
+  
+  import {choice} from 'numpy/random';
+  
+  // Initialize components for Routine "practiceRecall"
+  practiceRecallClock = new util.Clock();
+  mouseClear = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouseClear.mouseClock = new util.Clock();
+  correctLettersPractice = 0;
+  correctLettersTrial = 0;
+  
+  mouseExit = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouseExit.mouseClock = new util.Clock();
+  mouse1 = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouse1.mouseClock = new util.Clock();
+  blankButton = new visual.Rect ({
+    win: psychoJS.window, name: 'blankButton', 
+    width: [0.15, 0.08][0], height: [0.15, 0.08][1],
+    ori: 0, pos: [0.4, (- 0.4)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color([1, 1, 1]),
+    opacity: 1, depth: -4, interpolate: true,
+  });
+  
+  gatherResponseText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'gatherResponseText',
+    text: 'Select the letters in the order presented. Use the blank button to fill in forgotten letters. ',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0.4], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -5.0 
+  });
+  
+  Fbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Fbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), 0.3],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -6, interpolate: true,
+  });
+  
+  F_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'F_text',
+    text: 'F',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), 0.3], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -7.0 
+  });
+  
+  Pbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Pbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), 0.2],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -8, interpolate: true,
+  });
+  
+  Qbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Qbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), 0.1],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -9, interpolate: true,
+  });
+  
+  Jbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Jbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), 0.0],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -10, interpolate: true,
+  });
+  
+  Hbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Hbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), (- 0.1)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -11, interpolate: true,
+  });
+  
+  Kbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Kbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [(- 0.3), (- 0.2)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -12, interpolate: true,
+  });
+  
+  Tbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Tbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, 0.3],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -13, interpolate: true,
+  });
+  
+  Sbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Sbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, 0.2],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -14, interpolate: true,
+  });
+  
+  Nbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Nbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, 0.1],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -15, interpolate: true,
+  });
+  
+  Rbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Rbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, 0.0],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -16, interpolate: true,
+  });
+  
+  Ybutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Ybutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, (- 0.1)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -17, interpolate: true,
+  });
+  
+  Lbutton = new visual.Rect ({
+    win: psychoJS.window, name: 'Lbutton', 
+    width: [0.05, 0.05][0], height: [0.05, 0.05][1],
+    ori: 0, pos: [0.2, (- 0.2)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color(1.0),
+    opacity: 1, depth: -18, interpolate: true,
+  });
+  
+  clearButton = new visual.Rect ({
+    win: psychoJS.window, name: 'clearButton', 
+    width: [0.15, 0.08][0], height: [0.15, 0.08][1],
+    ori: 0, pos: [0, (- 0.4)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color('white'),
+    opacity: 1, depth: -19, interpolate: true,
+  });
+  
+  exitButton = new visual.Rect ({
+    win: psychoJS.window, name: 'exitButton', 
+    width: [0.15, 0.08][0], height: [0.15, 0.08][1],
+    ori: 0, pos: [(- 0.4), (- 0.4)],
+    lineWidth: 1, lineColor: new util.Color([1, 1, 1]),
+    fillColor: new util.Color('white'),
+    opacity: 1, depth: -20, interpolate: true,
+  });
+  
+  exitText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'exitText',
+    text: 'EXIT',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.4), (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('black'),  opacity: 1,
+    depth: -21.0 
+  });
+  
+  clearText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'clearText',
+    text: 'CLEAR',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('black'),  opacity: 1,
+    depth: -22.0 
+  });
+  
+  P_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'P_text',
+    text: 'P',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), 0.2], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -23.0 
+  });
+  
+  Q_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'Q_text',
+    text: 'Q',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), 0.1], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -24.0 
+  });
+  
+  J_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'J_text',
+    text: 'J',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), 0.0], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -25.0 
+  });
+  
+  H_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'H_text',
+    text: 'H',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), (- 0.1)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -26.0 
+  });
+  
+  K_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'K_text',
+    text: 'K',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.23), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -27.0 
+  });
+  
+  T_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'T_text',
+    text: 'T',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, 0.3], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -28.0 
+  });
+  
+  S_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'S_text',
+    text: 'S',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, 0.2], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -29.0 
+  });
+  
+  N_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'N_text',
+    text: 'N',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, 0.1], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -30.0 
+  });
+  
+  R_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'R_text',
+    text: 'R',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, 0.0], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -31.0 
+  });
+  
+  Y_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'Y_text',
+    text: 'Y',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, (- 0.1)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -32.0 
+  });
+  
+  L_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'L_text',
+    text: 'L',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.27, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -33.0 
+  });
+  
+  blankText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'blankText',
+    text: 'BLANK',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.4, (- 0.4)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('black'),  opacity: 1,
+    depth: -34.0 
+  });
+  
+  answer1 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'answer1',
+    text: /*  */
+  ,
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [(- 0.05), (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('grey'),  opacity: 1,
+    depth: -35.0 
+  });
+  
+  answer2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'answer2',
+    text: /*  */
+  ,
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0.05, (- 0.2)], height: 0.04,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('grey'),  opacity: 1,
+    depth: -36.0 
+  });
+  
+  mouseBlank = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouseBlank.mouseClock = new util.Clock();
+  // Initialize components for Routine "feedback_2"
+  feedback_2Clock = new util.Clock();
+  lettersCorrect = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'lettersCorrect',
+    text: 'default text',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0.2], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('red'),  opacity: 1,
+    depth: 0.0 
+  });
+  
+  correctLetters = 0;
+  
+  text_2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text_2',
+    text: 'default text',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, (- 0.2)], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -2.0 
+  });
+  
+  Feedback = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'Feedback',
+    text: 'Feedback',
+    font: 'Times New Roman',
+    units: undefined, 
+    pos: [0, 0.4], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -3.0 
+  });
+  
   // Create some handy timers
   globalClock = new util.Clock();  // to track the time since experiment started
   routineTimer = new util.CountdownTimer();  // to track time remaining of each (non-slip) routine
@@ -1354,10 +1909,10 @@ function practiceLoopLoopBegin(practiceLoopLoopScheduler) {
   // set up handler to look after randomisation of conditions etc
   practiceLoop = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: 1, method: TrialHandler.Method.RANDOM,
+    nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: 'practiceLetter.xlsx',
-    seed: $choice (12, size = 2), name: 'practiceLoop'
+    seed: undefined, name: 'practiceLoop'
   });
   psychoJS.experiment.addLoop(practiceLoop); // add the loop to the experiment
   currentLoop = practiceLoop;  // we're now the current loop
@@ -1384,36 +1939,111 @@ function practiceLoopLoopEnd() {
   return Scheduler.Event.NEXT;
 }
 
-function trialsLoopBegin(trialsLoopScheduler) {
+function practiceSentenceLoopBegin(practiceSentenceLoopScheduler) {
   // set up handler to look after randomisation of conditions etc
-  trials = new TrialHandler({
+  practiceSentence = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: 1, method: TrialHandler.Method.RANDOM,
+    nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
-    trialList: 'RSpan/sentenceProblems.xlsx',
-    seed: undefined, name: 'trials'
+    trialList: 'sentenceProblems.xlsx',
+    seed: undefined, name: 'practiceSentence'
   });
-  psychoJS.experiment.addLoop(trials); // add the loop to the experiment
-  currentLoop = trials;  // we're now the current loop
+  psychoJS.experiment.addLoop(practiceSentence); // add the loop to the experiment
+  currentLoop = practiceSentence;  // we're now the current loop
 
   // Schedule all the trials in the trialList:
-  for (const thisTrial of trials) {
-    const snapshot = trials.getSnapshot();
-    trialsLoopScheduler.add(importConditions(snapshot));
-    trialsLoopScheduler.add(sentenceRoutineBegin(snapshot));
-    trialsLoopScheduler.add(sentenceRoutineEachFrame(snapshot));
-    trialsLoopScheduler.add(sentenceRoutineEnd(snapshot));
-    trialsLoopScheduler.add(sentenceResponseRoutineBegin(snapshot));
-    trialsLoopScheduler.add(sentenceResponseRoutineEachFrame(snapshot));
-    trialsLoopScheduler.add(sentenceResponseRoutineEnd(snapshot));
-    trialsLoopScheduler.add(endLoopIteration(trialsLoopScheduler, snapshot));
+  for (const thisPracticeSentence of practiceSentence) {
+    const snapshot = practiceSentence.getSnapshot();
+    practiceSentenceLoopScheduler.add(importConditions(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceRoutineBegin(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceRoutineEachFrame(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceRoutineEnd(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceResponseRoutineBegin(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceResponseRoutineEachFrame(snapshot));
+    practiceSentenceLoopScheduler.add(sentenceResponseRoutineEnd(snapshot));
+    practiceSentenceLoopScheduler.add(feedbackRoutineBegin(snapshot));
+    practiceSentenceLoopScheduler.add(feedbackRoutineEachFrame(snapshot));
+    practiceSentenceLoopScheduler.add(feedbackRoutineEnd(snapshot));
+    practiceSentenceLoopScheduler.add(endLoopIteration(practiceSentenceLoopScheduler, snapshot));
   }
 
   return Scheduler.Event.NEXT;
 }
 
-function trialsLoopEnd() {
-  psychoJS.experiment.removeLoop(trials);
+function practiceSentenceLoopEnd() {
+  psychoJS.experiment.removeLoop(practiceSentence);
+
+  return Scheduler.Event.NEXT;
+}
+
+function trialLoopBegin(trialLoopScheduler) {
+  // set up handler to look after randomisation of conditions etc
+  trial = new TrialHandler({
+    psychoJS: psychoJS,
+    nReps: 1, method: TrialHandler.Method.RANDOM,
+    extraInfo: expInfo, originPath: undefined,
+    trialList: 'SentenceProblems2.xlsx',
+    seed: undefined, name: 'trial'
+  });
+  psychoJS.experiment.addLoop(trial); // add the loop to the experiment
+  currentLoop = trial;  // we're now the current loop
+
+  // Schedule all the trials in the trialList:
+  for (const thisTrial of trial) {
+    const snapshot = trial.getSnapshot();
+    trialLoopScheduler.add(importConditions(snapshot));
+    const sentenceTrialLoopScheduler = new Scheduler(psychoJS);
+    trialLoopScheduler.add(sentenceTrialLoopBegin, sentenceTrialLoopScheduler);
+    trialLoopScheduler.add(sentenceTrialLoopScheduler);
+    trialLoopScheduler.add(sentenceTrialLoopEnd);
+    trialLoopScheduler.add(letterTrial_2RoutineBegin(snapshot));
+    trialLoopScheduler.add(letterTrial_2RoutineEachFrame(snapshot));
+    trialLoopScheduler.add(letterTrial_2RoutineEnd(snapshot));
+    trialLoopScheduler.add(practiceRecallRoutineBegin(snapshot));
+    trialLoopScheduler.add(practiceRecallRoutineEachFrame(snapshot));
+    trialLoopScheduler.add(practiceRecallRoutineEnd(snapshot));
+    trialLoopScheduler.add(endLoopIteration(trialLoopScheduler, snapshot));
+  }
+
+  return Scheduler.Event.NEXT;
+}
+
+function sentenceTrialLoopBegin(sentenceTrialLoopScheduler) {
+  // set up handler to look after randomisation of conditions etc
+  sentenceTrial = new TrialHandler({
+    psychoJS: psychoJS,
+    nReps: 1, method: TrialHandler.Method.RANDOM,
+    extraInfo: expInfo, originPath: undefined,
+    trialList: undefined,
+    seed: undefined, name: 'sentenceTrial'
+  });
+  psychoJS.experiment.addLoop(sentenceTrial); // add the loop to the experiment
+  currentLoop = sentenceTrial;  // we're now the current loop
+
+  // Schedule all the trials in the trialList:
+  for (const thisSentenceTrial of sentenceTrial) {
+    const snapshot = sentenceTrial.getSnapshot();
+    sentenceTrialLoopScheduler.add(importConditions(snapshot));
+    sentenceTrialLoopScheduler.add(sentence2RoutineBegin(snapshot));
+    sentenceTrialLoopScheduler.add(sentence2RoutineEachFrame(snapshot));
+    sentenceTrialLoopScheduler.add(sentence2RoutineEnd(snapshot));
+    sentenceTrialLoopScheduler.add(sentenceResponseTrialRoutineBegin(snapshot));
+    sentenceTrialLoopScheduler.add(sentenceResponseTrialRoutineEachFrame(snapshot));
+    sentenceTrialLoopScheduler.add(sentenceResponseTrialRoutineEnd(snapshot));
+    sentenceTrialLoopScheduler.add(endLoopIteration(sentenceTrialLoopScheduler, snapshot));
+  }
+
+  return Scheduler.Event.NEXT;
+}
+
+function sentenceTrialLoopEnd() {
+  psychoJS.experiment.removeLoop(sentenceTrial);
+
+  return Scheduler.Event.NEXT;
+}
+
+function trialLoopEnd() {
+  psychoJS.experiment.removeLoop(trial);
 
   return Scheduler.Event.NEXT;
 }
@@ -1424,12 +2054,21 @@ function practiceListRoutineBegin(snapshot) {
     t = 0;
     practiceListClock.reset(); // clock
     frameN = -1;
-    routineTimer.add(1.000000);
+    routineTimer.add(2.000000);
     // update component parameters for each repeat
-    letterAppear.setText(Letters);
+    letterAppear.setText('');
+    letters = ["F", "P", "Q", "J", "H", "K", "T", "S", "N", "R", "Y", "L"];
+    firstLetter = choice(letters);
+    letters.remove(firstLetter);
+    secondLetter = choice(letters);
+    letters.append(firstLetter);
+    letterAppear.setText(firstLetter);
+    letterAppear_2.setText(secondLetter);
+    
     // keep track of which components have finished
     practiceListComponents = [];
     practiceListComponents.push(letterAppear);
+    practiceListComponents.push(letterAppear_2);
     
     for (const thisComponent of practiceListComponents)
       if ('status' in thisComponent)
@@ -1460,6 +2099,20 @@ function practiceListRoutineEachFrame(snapshot) {
     frameRemains = 0.0 + 1 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (letterAppear.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       letterAppear.setAutoDraw(false);
+    }
+    
+    // *letterAppear_2* updates
+    if (t >= 1.0 && letterAppear_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      letterAppear_2.tStart = t;  // (not accounting for frame time here)
+      letterAppear_2.frameNStart = frameN;  // exact frame index
+      
+      letterAppear_2.setAutoDraw(true);
+    }
+
+    frameRemains = 1.0 + 1.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (letterAppear_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      letterAppear_2.setAutoDraw(false);
     }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
@@ -1511,17 +2164,10 @@ function practiceRecallRoutineBegin(snapshot) {
     gotValidClick = false; // until a click is received
     checkboxes = [Fbutton, Pbutton, Qbutton, Jbutton, Hbutton, Kbutton, Tbutton, Sbutton, Nbutton, Rbutton, Ybutton, Lbutton];
     clicked = [];
+    clickedTrack = [];
+    timer = new core.Clock();
+    timer.reset();
     
-    // setup some python lists for storing info about the mouseBlank
-    // current position of the mouse:
-    mouseBlank.x = [];
-    mouseBlank.y = [];
-    mouseBlank.leftButton = [];
-    mouseBlank.midButton = [];
-    mouseBlank.rightButton = [];
-    mouseBlank.time = [];
-    mouseBlank.clicked_name = [];
-    gotValidClick = false; // until a click is received
     // setup some python lists for storing info about the mouseExit
     // current position of the mouse:
     mouseExit.x = [];
@@ -1554,10 +2200,14 @@ function practiceRecallRoutineBegin(snapshot) {
     Rbutton.setFillColor(new util.Color('green'));
     Ybutton.setFillColor(new util.Color('green'));
     Lbutton.setFillColor(new util.Color('green'));
+    answer1.setText('');
+    answer2.setText('');
+    // setup some python lists for storing info about the mouseBlank
+    mouseBlank.clicked_name = [];
+    gotValidClick = false; // until a click is received
     // keep track of which components have finished
     practiceRecallComponents = [];
     practiceRecallComponents.push(mouseClear);
-    practiceRecallComponents.push(mouseBlank);
     practiceRecallComponents.push(mouseExit);
     practiceRecallComponents.push(mouse1);
     practiceRecallComponents.push(blankButton);
@@ -1593,6 +2243,7 @@ function practiceRecallRoutineBegin(snapshot) {
     practiceRecallComponents.push(blankText);
     practiceRecallComponents.push(answer1);
     practiceRecallComponents.push(answer2);
+    practiceRecallComponents.push(mouseBlank);
     
     for (const thisComponent of practiceRecallComponents)
       if ('status' in thisComponent)
@@ -1628,63 +2279,171 @@ function practiceRecallRoutineEachFrame(snapshot) {
     }
     _pj = {};
     _pj_snippets(_pj);
+    if (mouseExit.isPressedIn(exitButton)) {
+        continueRoutine = false;
+    }
+    if ((practiceLoop.finished === false)) {
+        if (mouseBlank.isPressedIn(blankButton)) {
+            clicked.append(blankButton);
+            clickedTrack.append(box);
+            answer1.color = "white";
+            answer2.color = "white";
+            if ((clicked.length === 1)) {
+                answer1.setText("Blank");
+            } else {
+                if ((clicked.length === 2)) {
+                    answer2.setText("Blank");
+                }
+            }
+        }
+    } else {
+        if (mouseBlank.isPressedIn(blankButton)) {
+            clicked.append(blankButton);
+            clickedTrack.append(box);
+            answer1.color = "white";
+            if ((clicked.length === 1)) {
+                answer1.setText("Blank");
+            }
+        }
+    }
     for (var box, _pj_c = 0, _pj_a = checkboxes, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         box = _pj_a[_pj_c];
-        if ((mouse1.isPressedln(box) && (! _pj.in_es6(box.name, clicked)))) {
-            box.color = "black";
+        if (((mouse1.isPressedIn(box) && (! _pj.in_es6(box.name, clicked))) && (clicked.length === 0))) {
+            box.fillColor = "black";
             clicked.append(box.name);
-            answer1.setText(getLabel(box));
+            clickedTrack.append(box);
             answer1.color = "white";
-        }
-        if (((mouse1.isPressedln(box) && (! _pj.in_es6(box.name, clicked))) && (clicked.length === 1))) {
-            box.color = "black";
-            clicked.append(box.name);
-            answer2.color = "white";
-            answer2.setText(getLabel(box));
+            if ((box.name === "Fbutton")) {
+                answer1.setText("F");
+            } else {
+                if ((box.name === "Pbutton")) {
+                    answer1.setText("P");
+                } else {
+                    if ((box.name === "Qbutton")) {
+                        answer1.setText("Q");
+                    } else {
+                        if ((box.name === "Jbutton")) {
+                            answer1.setText("J");
+                        } else {
+                            if ((box.name === "Hbutton")) {
+                                answer1.setText("H");
+                            } else {
+                                if ((box.name === "Kbutton")) {
+                                    answer1.setText("K");
+                                } else {
+                                    if ((box.name === "Tbutton")) {
+                                        answer1.setText("T");
+                                    } else {
+                                        if ((box.name === "Sbutton")) {
+                                            answer1.setText("S");
+                                        } else {
+                                            if ((box.name === "Nbutton")) {
+                                                answer1.setText("N");
+                                            } else {
+                                                if ((box.name === "Rbutton")) {
+                                                    answer1.setText("R");
+                                                } else {
+                                                    if ((box.name === "Ybutton")) {
+                                                        answer1.setText("Y");
+                                                    } else {
+                                                        if ((box.name === "Lbutton")) {
+                                                            answer1.setText("L");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-    if (mouseClear.isPressedln(clearButton)) {
-        clicked = [];
-        clicked.append(box.name);
-        answer1.color = "grey";
-        answer2.color = "grey";
+    if ((practiceLoop.finished === false)) {
+        for (var box, _pj_c = 0, _pj_a = checkboxes, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+            box = _pj_a[_pj_c];
+            if (((mouse1.isPressedIn(box) && (! _pj.in_es6(box.name, clicked))) && (clicked.length === 1))) {
+                box.fillColor = "black";
+                clicked.append(box.name);
+                answer2.color = "white";
+                clickedTrack.append(box);
+                if ((box.name === "Fbutton")) {
+                    answer2.setText("F");
+                } else {
+                    if ((box.name === "Pbutton")) {
+                        answer2.setText("P");
+                    } else {
+                        if ((box.name === "Qbutton")) {
+                            answer2.setText("Q");
+                        } else {
+                            if ((box.name === "Jbutton")) {
+                                answer2.setText("J");
+                            } else {
+                                if ((box.name === "Hbutton")) {
+                                    answer2.setText("H");
+                                } else {
+                                    if ((box.name === "Kbutton")) {
+                                        answer2.setText("K");
+                                    } else {
+                                        if ((box.name === "Tbutton")) {
+                                            answer2.setText("T");
+                                        } else {
+                                            if ((box.name === "Sbutton")) {
+                                                answer2.setText("S");
+                                            } else {
+                                                if ((box.name === "Nbutton")) {
+                                                    answer2.setText("N");
+                                                } else {
+                                                    if ((box.name === "Rbutton")) {
+                                                        answer2.setText("R");
+                                                    } else {
+                                                        if ((box.name === "Ybutton")) {
+                                                            answer2.setText("Y");
+                                                        } else {
+                                                            if ((box.name === "Lbutton")) {
+                                                                answer2.setText("L");
+                                                            } else {
+                                                                if ((box.name === "blankButton")) {
+                                                                    answer2.setText("Blank");
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (mouseClear.isPressedIn(clearButton)) {
+        if ((clicked.length === 1)) {
+            if ((clickedTrack[0] !== blankButton)) {
+                clickedTrack[0].fillColor = "green";
+            }
+        }
         answer1.setText("");
         answer2.setText("");
+        if ((clicked.length === 2)) {
+            if ((clickedTrack[0] !== blankButton)) {
+                clickedTrack[0].fillColor = "green";
+            }
+            if ((clickedTrack[1] !== blankButton)) {
+                clickedTrack[1].fillColor = "green";
+            }
+        }
+        clicked = [];
+        clickedTrack = [];
     }
     
-    // *mouseBlank* updates
-    if (t >= 0.0 && mouseBlank.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      mouseBlank.tStart = t;  // (not accounting for frame time here)
-      mouseBlank.frameNStart = frameN;  // exact frame index
-      
-      mouseBlank.status = PsychoJS.Status.STARTED;
-      mouseBlank.mouseClock.reset();
-      prevButtonState = mouseBlank.getPressed();  // if button is down already this ISN'T a new click
-      }
-    if (mouseBlank.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
-      _mouseButtons = mouseBlank.getPressed();
-      if (!_mouseButtons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
-        prevButtonState = _mouseButtons;
-        if (_mouseButtons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
-          _mouseXYs = mouseBlank.getPos();
-          mouseBlank.x.push(_mouseXYs[0]);
-          mouseBlank.y.push(_mouseXYs[1]);
-          mouseBlank.leftButton.push(_mouseButtons[0]);
-          mouseBlank.midButton.push(_mouseButtons[1]);
-          mouseBlank.rightButton.push(_mouseButtons[2]);
-          mouseBlank.time.push(mouseBlank.mouseClock.getTime());
-          // check if the mouse was inside our 'clickable' objects
-          gotValidClick = false;
-          for (const obj of [blankButton]) {
-            if (obj.contains(mouseBlank)) {
-              gotValidClick = true;
-              mouseBlank.clicked_name.push(obj.name)
-            }
-          }
-        }
-      }
-    }
     // *mouseExit* updates
     if (t >= 0.0 && mouseExit.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -2084,6 +2843,34 @@ function practiceRecallRoutineEachFrame(snapshot) {
       answer2.setAutoDraw(true);
     }
 
+    // *mouseBlank* updates
+    if (t >= 0.0 && mouseBlank.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      mouseBlank.tStart = t;  // (not accounting for frame time here)
+      mouseBlank.frameNStart = frameN;  // exact frame index
+      
+      mouseBlank.status = PsychoJS.Status.STARTED;
+      mouseBlank.mouseClock.reset();
+      prevButtonState = [0, 0, 0];  // if now button is down we will treat as 'new' click
+      }
+    if (mouseBlank.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
+      _mouseButtons = mouseBlank.getPressed();
+      if (!_mouseButtons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+        prevButtonState = _mouseButtons;
+        if (_mouseButtons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+          // check if the mouse was inside our 'clickable' objects
+          gotValidClick = false;
+          for (const obj of [blankButton]) {
+            if (obj.contains(mouseBlank)) {
+              gotValidClick = true;
+              mouseBlank.clicked_name.push(obj.name)
+            }
+          }
+          // abort routine on response
+          continueRoutine = false;
+        }
+      }
+    }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -2128,15 +2915,7 @@ function practiceRecallRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouseClear.rightButton', _mouseButtons[2]);
     if (mouseClear.clicked_name.length > 0) {
       psychoJS.experiment.addData('mouseClear.clicked_name', mouseClear.clicked_name[0]);}
-    // store data for thisExp (ExperimentHandler)
-    psychoJS.experiment.addData('mouseBlank.x', mouseBlank.x);
-    psychoJS.experiment.addData('mouseBlank.y', mouseBlank.y);
-    psychoJS.experiment.addData('mouseBlank.leftButton', mouseBlank.leftButton);
-    psychoJS.experiment.addData('mouseBlank.midButton', mouseBlank.midButton);
-    psychoJS.experiment.addData('mouseBlank.rightButton', mouseBlank.rightButton);
-    psychoJS.experiment.addData('mouseBlank.time', mouseBlank.time);
-    psychoJS.experiment.addData('mouseBlank.clicked_name', mouseBlank.clicked_name);
-    
+    /* Syntax Error: Fix Python code */
     // store data for thisExp (ExperimentHandler)
     if (mouseExit.x) {  psychoJS.experiment.addData('mouseExit.x', mouseExit.x[0])};
     if (mouseExit.y) {  psychoJS.experiment.addData('mouseExit.y', mouseExit.y[0])};
@@ -2155,6 +2934,16 @@ function practiceRecallRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse1.time', mouse1.time);
     psychoJS.experiment.addData('mouse1.clicked_name', mouse1.clicked_name);
     
+    // store data for thisExp (ExperimentHandler)
+    _mouseXYs = mouseBlank.getPos();
+    _mouseButtons = mouseBlank.getPressed();
+    psychoJS.experiment.addData('mouseBlank.x', _mouseXYs[0]);
+    psychoJS.experiment.addData('mouseBlank.y', _mouseXYs[1]);
+    psychoJS.experiment.addData('mouseBlank.leftButton', _mouseButtons[0]);
+    psychoJS.experiment.addData('mouseBlank.midButton', _mouseButtons[1]);
+    psychoJS.experiment.addData('mouseBlank.rightButton', _mouseButtons[2]);
+    if (mouseBlank.clicked_name.length > 0) {
+      psychoJS.experiment.addData('mouseBlank.clicked_name', mouseBlank.clicked_name[0]);}
     // the Routine "practiceRecall" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2518,11 +3307,15 @@ function sentenceRoutineBegin(snapshot) {
     mouse.rightButton = [];
     mouse.time = [];
     gotValidClick = false; // until a click is received
+    mouse.mouseClock.reset();
+    countingClock = new core.Clock();
+    
     // keep track of which components have finished
     sentenceComponents = [];
     sentenceComponents.push(sentenceText);
     sentenceComponents.push(continue_12);
     sentenceComponents.push(mouse);
+    sentenceComponents.push(text_3);
     
     for (const thisComponent of sentenceComponents)
       if ('status' in thisComponent)
@@ -2567,7 +3360,6 @@ function sentenceRoutineEachFrame(snapshot) {
       mouse.frameNStart = frameN;  // exact frame index
       
       mouse.status = PsychoJS.Status.STARTED;
-      mouse.mouseClock.reset();
       prevButtonState = mouse.getPressed();  // if button is down already this ISN'T a new click
       }
     if (mouse.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
@@ -2586,6 +3378,26 @@ function sentenceRoutineEachFrame(snapshot) {
           continueRoutine = false;
         }
       }
+    }
+    timeRemaining = countingClock.getTime();
+    minutes = Number.parseInt((timeRemaining / 60.0));
+    tenSeconds = Number.parseInt(((timeRemaining - (minutes * 60)) / 10.0));
+    oneSeconds = Number.parseInt((timeRemaining - ((minutes * 60) + (tenSeconds * 10))));
+    timeText = (((minutes.toString() + ":") + tenSeconds.toString()) + oneSeconds.toString());
+    
+    
+    // *text_3* updates
+    if (t >= 0.0 && text_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text_3.tStart = t;  // (not accounting for frame time here)
+      text_3.frameNStart = frameN;  // exact frame index
+      
+      text_3.setAutoDraw(true);
+    }
+
+    
+    if (text_3.status === PsychoJS.Status.STARTED){ // only update if being drawn
+      text_3.setText('');
     }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
@@ -2629,6 +3441,9 @@ function sentenceRoutineEnd(snapshot) {
     if (mouse.rightButton) {  psychoJS.experiment.addData('mouse.rightButton', mouse.rightButton[0])};
     if (mouse.time) {  psychoJS.experiment.addData('mouse.time', mouse.time[0])};
     
+    totalTime += countingClock.getTime();
+    avgTime = (totalTime / 15);
+    
     // the Routine "sentence" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2643,6 +3458,16 @@ function sentenceResponseRoutineBegin(snapshot) {
     sentenceResponseClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
+    clicked = 0;
+    correct = 0;
+    correctText = "";
+    trueButton.fillColor = "white";
+    falseButton.fillColor = "white";
+    timerC = new core.Clock();
+    timerC.reset();
+    
+    trueButton.setFillColor(new util.Color('white'));
+    falseButton.setFillColor(new util.Color('white'));
     // setup some python lists for storing info about the mouse12
     // current position of the mouse:
     mouse12.x = [];
@@ -2654,7 +3479,6 @@ function sentenceResponseRoutineBegin(snapshot) {
     mouse12.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse12.mouseClock.reset();
-    sentenceFeedback1.setText('');
     // keep track of which components have finished
     sentenceResponseComponents = [];
     sentenceResponseComponents.push(senseText);
@@ -2663,7 +3487,6 @@ function sentenceResponseRoutineBegin(snapshot) {
     sentenceResponseComponents.push(falseButton);
     sentenceResponseComponents.push(falseText);
     sentenceResponseComponents.push(mouse12);
-    sentenceResponseComponents.push(sentenceFeedback1);
     
     for (const thisComponent of sentenceResponseComponents)
       if ('status' in thisComponent)
@@ -2681,17 +3504,38 @@ function sentenceResponseRoutineEachFrame(snapshot) {
     t = sentenceResponseClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    correct = 0;
-    sentenceFeedback1.setText("");
-    if ((mouse12.isPressedIn(trueButton) && (CorrectResp === "TRUE"))) {
-        correct += 1;
-        sentenceFeedback1.setText("Correct!");
+    if (((mouse12.isPressedIn(trueButton) && (CorrectResp === "correct")) && (clicked === 0))) {
+        trueButton.fillColor = "green";
+        correct = 1;
+        totalCorrectPractice += 1;
+        clicked = 1;
     } else {
-        if ((mouse12.isPressedln(falseButton) && (CorrectResp === "FALSE"))) {
-            correct += 1;
-            sentenceFeedback1.setText("Correct!");
+        if (((mouse12.isPressedIn(falseButton) && (CorrectResp === "incorrect")) && (clicked === 0))) {
+            trueButton.fillColor = "green";
+            correct = 1;
+            totalCorrectPractice += 1;
+            clicked = 1;
+            countdownStarted = true;
         } else {
-            sentenceFeedback1.setText("Incorrect");
+            if (((mouse12.isPressedIn(trueButton) && (CorrectResp === "incorrect")) && (clicked === 0))) {
+                trueButton.fillColor = "green";
+                clicked = 1;
+                totalCorrectPractice += 0;
+                correct = 0;
+            } else {
+                if (((mouse12.isPressedIn(falseButton) && (CorrectResp === "correct")) && (clicked === 0))) {
+                    trueButton.fillColor = "green";
+                    clicked = 1;
+                    totalCorrectPractice += 0;
+                    correct = 0;
+                } else {
+                    correctText = "";
+                    trueButton.fillColor = "white";
+                    falseButton.fillColor = "white";
+                    clicked = 0;
+                    correct = 0;
+                }
+            }
         }
     }
     
@@ -2774,21 +3618,12 @@ function sentenceResponseRoutineEachFrame(snapshot) {
               mouse12.clicked_name.push(obj.name)
             }
           }
-          // abort routine on response
-          continueRoutine = false;
+          if (gotValidClick === true) { // abort routine on response
+            continueRoutine = false;
+          }
         }
       }
     }
-    
-    // *sentenceFeedback1* updates
-    if (t >= 0.0 && sentenceFeedback1.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      sentenceFeedback1.tStart = t;  // (not accounting for frame time here)
-      sentenceFeedback1.frameNStart = frameN;  // exact frame index
-      
-      sentenceFeedback1.setAutoDraw(true);
-    }
-
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -2823,6 +3658,16 @@ function sentenceResponseRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     }
+    practiceLoop.addData("routineTime", timerC.getTime());
+    if ((correct === 1)) {
+        correctText = "Correct!";
+    } else {
+        if ((correct === 0)) {
+            correctText = "Incorrect";
+        }
+    }
+    practiceLoop.addData("correct", correctText);
+    
     // store data for thisExp (ExperimentHandler)
     if (mouse12.x) {  psychoJS.experiment.addData('mouse12.x', mouse12.x[0])};
     if (mouse12.y) {  psychoJS.experiment.addData('mouse12.y', mouse12.y[0])};
@@ -2834,6 +3679,97 @@ function sentenceResponseRoutineEnd(snapshot) {
     
     // the Routine "sentenceResponse" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function feedbackRoutineBegin(snapshot) {
+  return function () {
+    //------Prepare to start Routine 'feedback'-------
+    t = 0;
+    feedbackClock.reset(); // clock
+    frameN = -1;
+    routineTimer.add(1.000000);
+    // update component parameters for each repeat
+    sentenceFeedback2.setText(correctText);
+    // keep track of which components have finished
+    feedbackComponents = [];
+    feedbackComponents.push(sentenceFeedback2);
+    
+    for (const thisComponent of feedbackComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function feedbackRoutineEachFrame(snapshot) {
+  return function () {
+    //------Loop for each frame of Routine 'feedback'-------
+    let continueRoutine = true; // until we're told otherwise
+    // get current time
+    t = feedbackClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *sentenceFeedback2* updates
+    if (t >= 0.0 && sentenceFeedback2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      sentenceFeedback2.tStart = t;  // (not accounting for frame time here)
+      sentenceFeedback2.frameNStart = frameN;  // exact frame index
+      
+      sentenceFeedback2.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 1.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (sentenceFeedback2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      sentenceFeedback2.setAutoDraw(false);
+    }
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of feedbackComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine && routineTimer.getTime() > 0) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function feedbackRoutineEnd(snapshot) {
+  return function () {
+    //------Ending Routine 'feedback'-------
+    for (const thisComponent of feedbackComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    if ((correct === 1)) {
+        sentenceFeedback2.setText("Correct!");
+    } else {
+        if ((correct === 0)) {
+            sentenceFeedback2.setText("Incorrect");
+        }
+    }
+    practiceSentence.addData("correctSentence", correct);
+    practiceSentence.addData("totalCorrectSentence", totalCorrectPractice);
     
     return Scheduler.Event.NEXT;
   };
@@ -3291,6 +4227,582 @@ function feedbackinstruct2RoutineEnd(snapshot) {
   };
 }
 
+function sentence2RoutineBegin(snapshot) {
+  return function () {
+    //------Prepare to start Routine 'sentence2'-------
+    t = 0;
+    sentence2Clock.reset(); // clock
+    frameN = -1;
+    // update component parameters for each repeat
+    sentenceText2.setText(sentence);
+    // setup some python lists for storing info about the mouse_12
+    gotValidClick = false; // until a click is received
+    countdownClock = new core.CountdownTimer(avgTime);
+    
+    // keep track of which components have finished
+    sentence2Components = [];
+    sentence2Components.push(sentenceText2);
+    sentence2Components.push(mouse_12);
+    sentence2Components.push(continue_13);
+    sentence2Components.push(text);
+    
+    for (const thisComponent of sentence2Components)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function sentence2RoutineEachFrame(snapshot) {
+  return function () {
+    //------Loop for each frame of Routine 'sentence2'-------
+    let continueRoutine = true; // until we're told otherwise
+    // get current time
+    t = sentence2Clock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *sentenceText2* updates
+    if (t >= 0.0 && sentenceText2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      sentenceText2.tStart = t;  // (not accounting for frame time here)
+      sentenceText2.frameNStart = frameN;  // exact frame index
+      
+      sentenceText2.setAutoDraw(true);
+    }
+
+    // *mouse_12* updates
+    if (t >= 0.0 && mouse_12.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      mouse_12.tStart = t;  // (not accounting for frame time here)
+      mouse_12.frameNStart = frameN;  // exact frame index
+      
+      mouse_12.status = PsychoJS.Status.STARTED;
+      mouse_12.mouseClock.reset();
+      prevButtonState = mouse_12.getPressed();  // if button is down already this ISN'T a new click
+      }
+    if (mouse_12.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
+      _mouseButtons = mouse_12.getPressed();
+      if (!_mouseButtons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+        prevButtonState = _mouseButtons;
+        if (_mouseButtons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+          // abort routine on response
+          continueRoutine = false;
+        }
+      }
+    }
+    
+    // *continue_13* updates
+    if (t >= 0.0 && continue_13.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      continue_13.tStart = t;  // (not accounting for frame time here)
+      continue_13.frameNStart = frameN;  // exact frame index
+      
+      continue_13.setAutoDraw(true);
+    }
+
+    timeRemaining = countdownClock.getTime();
+    if ((timeRemaining <= 0.0)) {
+        continueRoutine = false;
+        sentenceTrial.finished = true;
+        continueExperiment = true;
+    } else {
+        minutes = Number.parseInt((timeRemaining / 60.0));
+        tenSeconds = Number.parseInt(((timeRemaining - (minutes * 60)) / 10.0));
+        oneSeconds = Number.parseInt((timeRemaining - ((minutes * 60) + (tenSeconds * 10))));
+        timeText = (((minutes.toString() + ":") + tenSeconds.toString()) + oneSeconds.toString());
+    }
+    
+    
+    // *text* updates
+    if (t >= 0.0 && text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text.tStart = t;  // (not accounting for frame time here)
+      text.frameNStart = frameN;  // exact frame index
+      
+      text.setAutoDraw(true);
+    }
+
+    
+    if (text.status === PsychoJS.Status.STARTED){ // only update if being drawn
+      text.setText('');
+    }
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of sentence2Components)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function sentence2RoutineEnd(snapshot) {
+  return function () {
+    //------Ending Routine 'sentence2'-------
+    for (const thisComponent of sentence2Components) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    // store data for thisExp (ExperimentHandler)
+    _mouseXYs = mouse_12.getPos();
+    _mouseButtons = mouse_12.getPressed();
+    psychoJS.experiment.addData('mouse_12.x', _mouseXYs[0]);
+    psychoJS.experiment.addData('mouse_12.y', _mouseXYs[1]);
+    psychoJS.experiment.addData('mouse_12.leftButton', _mouseButtons[0]);
+    psychoJS.experiment.addData('mouse_12.midButton', _mouseButtons[1]);
+    psychoJS.experiment.addData('mouse_12.rightButton', _mouseButtons[2]);
+    // the Routine "sentence2" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function sentenceResponseTrialRoutineBegin(snapshot) {
+  return function () {
+    //------Prepare to start Routine 'sentenceResponseTrial'-------
+    t = 0;
+    sentenceResponseTrialClock.reset(); // clock
+    frameN = -1;
+    // update component parameters for each repeat
+    clicked = 0;
+    correctText = "";
+    trueButton.fillColor = "white";
+    falseButton.fillColor = "white";
+    timerC = new core.Clock();
+    timerC.reset();
+    
+    trueButton_2.setFillColor(new util.Color('white'));
+    falseButton_2.setFillColor(new util.Color('white'));
+    // setup some python lists for storing info about the mouse12_2
+    // current position of the mouse:
+    mouse12_2.x = [];
+    mouse12_2.y = [];
+    mouse12_2.leftButton = [];
+    mouse12_2.midButton = [];
+    mouse12_2.rightButton = [];
+    mouse12_2.time = [];
+    mouse12_2.clicked_name = [];
+    gotValidClick = false; // until a click is received
+    mouse12_2.mouseClock.reset();
+    // keep track of which components have finished
+    sentenceResponseTrialComponents = [];
+    sentenceResponseTrialComponents.push(senseText_2);
+    sentenceResponseTrialComponents.push(trueButton_2);
+    sentenceResponseTrialComponents.push(trueText_2);
+    sentenceResponseTrialComponents.push(falseButton_2);
+    sentenceResponseTrialComponents.push(falseText_2);
+    sentenceResponseTrialComponents.push(mouse12_2);
+    
+    for (const thisComponent of sentenceResponseTrialComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function sentenceResponseTrialRoutineEachFrame(snapshot) {
+  return function () {
+    //------Loop for each frame of Routine 'sentenceResponseTrial'-------
+    let continueRoutine = true; // until we're told otherwise
+    // get current time
+    t = sentenceResponseTrialClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    if (((mouse12.isPressedIn(trueButton) && (CorrectResp === "correct")) && (clicked === 0))) {
+        trueButton.fillColor = "green";
+        correct = 1;
+        totalCorrectSentenceTrial += 1;
+        clicked = 1;
+    } else {
+        if (((mouse12.isPressedIn(falseButton) && (CorrectResp === "incorrect")) && (clicked === 0))) {
+            trueButton.fillColor = "green";
+            correct = 1;
+            totalCorrectSentenceTrial += 1;
+            clicked = 1;
+            countdownStarted = true;
+        } else {
+            if (((mouse12.isPressedIn(trueButton) && (CorrectResp === "incorrect")) && (clicked === 0))) {
+                trueButton.fillColor = "green";
+                clicked = 1;
+                totalCorrectSentenceTrial += 0;
+                correct = 0;
+            } else {
+                if (((mouse12.isPressedIn(falseButton) && (CorrectResp === "correct")) && (clicked === 0))) {
+                    trueButton.fillColor = "green";
+                    clicked = 1;
+                    totalCorrectSentenceTrial += 0;
+                    correct = 0;
+                } else {
+                    correctText = "";
+                    trueButton.fillColor = "white";
+                    falseButton.fillColor = "white";
+                    clicked = 0;
+                    correct = 0;
+                }
+            }
+        }
+    }
+    
+    
+    // *senseText_2* updates
+    if (t >= 0.0 && senseText_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      senseText_2.tStart = t;  // (not accounting for frame time here)
+      senseText_2.frameNStart = frameN;  // exact frame index
+      
+      senseText_2.setAutoDraw(true);
+    }
+
+    
+    // *trueButton_2* updates
+    if (t >= 0.0 && trueButton_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      trueButton_2.tStart = t;  // (not accounting for frame time here)
+      trueButton_2.frameNStart = frameN;  // exact frame index
+      
+      trueButton_2.setAutoDraw(true);
+    }
+
+    
+    // *trueText_2* updates
+    if (t >= 0.0 && trueText_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      trueText_2.tStart = t;  // (not accounting for frame time here)
+      trueText_2.frameNStart = frameN;  // exact frame index
+      
+      trueText_2.setAutoDraw(true);
+    }
+
+    
+    // *falseButton_2* updates
+    if (t >= 0.0 && falseButton_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      falseButton_2.tStart = t;  // (not accounting for frame time here)
+      falseButton_2.frameNStart = frameN;  // exact frame index
+      
+      falseButton_2.setAutoDraw(true);
+    }
+
+    
+    // *falseText_2* updates
+    if (t >= 0.0 && falseText_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      falseText_2.tStart = t;  // (not accounting for frame time here)
+      falseText_2.frameNStart = frameN;  // exact frame index
+      
+      falseText_2.setAutoDraw(true);
+    }
+
+    // *mouse12_2* updates
+    if (t >= 0.0 && mouse12_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      mouse12_2.tStart = t;  // (not accounting for frame time here)
+      mouse12_2.frameNStart = frameN;  // exact frame index
+      
+      mouse12_2.status = PsychoJS.Status.STARTED;
+      prevButtonState = mouse12_2.getPressed();  // if button is down already this ISN'T a new click
+      }
+    if (mouse12_2.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
+      _mouseButtons = mouse12_2.getPressed();
+      if (!_mouseButtons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+        prevButtonState = _mouseButtons;
+        if (_mouseButtons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+          _mouseXYs = mouse12_2.getPos();
+          mouse12_2.x.push(_mouseXYs[0]);
+          mouse12_2.y.push(_mouseXYs[1]);
+          mouse12_2.leftButton.push(_mouseButtons[0]);
+          mouse12_2.midButton.push(_mouseButtons[1]);
+          mouse12_2.rightButton.push(_mouseButtons[2]);
+          mouse12_2.time.push(mouse12_2.mouseClock.getTime());
+          // check if the mouse was inside our 'clickable' objects
+          gotValidClick = false;
+          for (const obj of [trueButton, falseButton]) {
+            if (obj.contains(mouse12_2)) {
+              gotValidClick = true;
+              mouse12_2.clicked_name.push(obj.name)
+            }
+          }
+          if (gotValidClick === true) { // abort routine on response
+            continueRoutine = false;
+          }
+        }
+      }
+    }
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of sentenceResponseTrialComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function sentenceResponseTrialRoutineEnd(snapshot) {
+  return function () {
+    //------Ending Routine 'sentenceResponseTrial'-------
+    for (const thisComponent of sentenceResponseTrialComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    sentenceTrial.addData("totalCorrectSentenceTrial", totalCorrectSentenceTrial);
+    practiceSentence.addData("correctSentenceTrial", correct);
+    if ((correct === 1)) {
+        correctText = "Correct!";
+    } else {
+        if ((correct === 0)) {
+            correctText = "Incorrect";
+        }
+    }
+    sentenceTrial.addData("correct", correctText);
+    
+    // store data for thisExp (ExperimentHandler)
+    if (mouse12_2.x) {  psychoJS.experiment.addData('mouse12_2.x', mouse12_2.x[0])};
+    if (mouse12_2.y) {  psychoJS.experiment.addData('mouse12_2.y', mouse12_2.y[0])};
+    if (mouse12_2.leftButton) {  psychoJS.experiment.addData('mouse12_2.leftButton', mouse12_2.leftButton[0])};
+    if (mouse12_2.midButton) {  psychoJS.experiment.addData('mouse12_2.midButton', mouse12_2.midButton[0])};
+    if (mouse12_2.rightButton) {  psychoJS.experiment.addData('mouse12_2.rightButton', mouse12_2.rightButton[0])};
+    if (mouse12_2.time) {  psychoJS.experiment.addData('mouse12_2.time', mouse12_2.time[0])};
+    if (mouse12_2.clicked_name) {  psychoJS.experiment.addData('mouse12_2.clicked_name', mouse12_2.clicked_name[0])};
+    
+    // the Routine "sentenceResponseTrial" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function letterTrial_2RoutineBegin(snapshot) {
+  return function () {
+    //------Prepare to start Routine 'letterTrial_2'-------
+    t = 0;
+    letterTrial_2Clock.reset(); // clock
+    frameN = -1;
+    routineTimer.add(1.000000);
+    // update component parameters for each repeat
+    letterAppear_3.setText('');
+    letters = ["F", "P", "Q", "J", "H", "K", "T", "S", "N", "R", "Y", "L"];
+    firstLetter = choice(letters);
+    letterAppear_3.setText(firstLetter);
+    
+    // keep track of which components have finished
+    letterTrial_2Components = [];
+    letterTrial_2Components.push(letterAppear_3);
+    
+    for (const thisComponent of letterTrial_2Components)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function letterTrial_2RoutineEachFrame(snapshot) {
+  return function () {
+    //------Loop for each frame of Routine 'letterTrial_2'-------
+    let continueRoutine = true; // until we're told otherwise
+    // get current time
+    t = letterTrial_2Clock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *letterAppear_3* updates
+    if (t >= 0.0 && letterAppear_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      letterAppear_3.tStart = t;  // (not accounting for frame time here)
+      letterAppear_3.frameNStart = frameN;  // exact frame index
+      
+      letterAppear_3.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 1 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (letterAppear_3.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      letterAppear_3.setAutoDraw(false);
+    }
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of letterTrial_2Components)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine && routineTimer.getTime() > 0) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function letterTrial_2RoutineEnd(snapshot) {
+  return function () {
+    //------Ending Routine 'letterTrial_2'-------
+    for (const thisComponent of letterTrial_2Components) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function feedback_2RoutineBegin(snapshot) {
+  return function () {
+    //------Prepare to start Routine 'feedback_2'-------
+    t = 0;
+    feedback_2Clock.reset(); // clock
+    frameN = -1;
+    // update component parameters for each repeat
+    lettersCorrect.setText(percentCorrect);
+    lettersRecalled = (((("You recalled " + correctLetters.toString()) + " letters correctly out of ") + 7.toString()) + "letters.");
+    percentCorrect = (("Percentage correct: " + (totalCorrectPractice / 12).toString()) + "%");
+    
+    text_2.setText(lettersRecalled);
+    // keep track of which components have finished
+    feedback_2Components = [];
+    feedback_2Components.push(lettersCorrect);
+    feedback_2Components.push(text_2);
+    feedback_2Components.push(Feedback);
+    
+    for (const thisComponent of feedback_2Components)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function feedback_2RoutineEachFrame(snapshot) {
+  return function () {
+    //------Loop for each frame of Routine 'feedback_2'-------
+    let continueRoutine = true; // until we're told otherwise
+    // get current time
+    t = feedback_2Clock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *lettersCorrect* updates
+    if (t >= 0.0 && lettersCorrect.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      lettersCorrect.tStart = t;  // (not accounting for frame time here)
+      lettersCorrect.frameNStart = frameN;  // exact frame index
+      
+      lettersCorrect.setAutoDraw(true);
+    }
+
+    lettersRecalled = (((("You recalled " + correctLetters.toString()) + " letters correctly out of ") + 7.toString()) + "letters.");
+    percentCorrect = (("Percentage correct: " + (totalCorrectPractice / 12).toString()) + "%");
+    
+    
+    // *text_2* updates
+    if (t >= 0.0 && text_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text_2.tStart = t;  // (not accounting for frame time here)
+      text_2.frameNStart = frameN;  // exact frame index
+      
+      text_2.setAutoDraw(true);
+    }
+
+    
+    // *Feedback* updates
+    if (t >= 0.0 && Feedback.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      Feedback.tStart = t;  // (not accounting for frame time here)
+      Feedback.frameNStart = frameN;  // exact frame index
+      
+      Feedback.setAutoDraw(true);
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of feedback_2Components)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function feedback_2RoutineEnd(snapshot) {
+  return function () {
+    //------Ending Routine 'feedback_2'-------
+    for (const thisComponent of feedback_2Components) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    // the Routine "feedback_2" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    return Scheduler.Event.NEXT;
+  };
+}
+
 function endLoopIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return function () {
@@ -3325,6 +4837,20 @@ function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
   }
+  
+  
+  
+  
+  
+  
+  
+  trials.addData("totalCorrectPractice", totalCorrectPractice);
+  
+  
+  
+  
+  
+  
   
   
   
