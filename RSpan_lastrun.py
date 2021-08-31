@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.4),
-    on Sun Aug 29 11:38:14 2021
+    on Mon Aug 30 19:18:57 2021
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -673,7 +673,7 @@ timerReading = core.Clock()
 avgTime = 0
 totalTime = 0
 text = visual.TextStim(win=win, name='text',
-    text='default text',
+    text=None,
     font='Arial',
     pos=(0.4, -0.4), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -722,9 +722,9 @@ mouse12_2 = event.Mouse(win=win)
 x, y = [None, None]
 mouse12_2.mouseClock = core.Clock()
 
-# Initialize components for Routine "practiceList"
-practiceListClock = core.Clock()
-letterAppear = visual.TextStim(win=win, name='letterAppear',
+# Initialize components for Routine "letterTrial_2"
+letterTrial_2Clock = core.Clock()
+letterAppear_3 = visual.TextStim(win=win, name='letterAppear_3',
     text=None,
     font='Times New Roman',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
@@ -732,13 +732,6 @@ letterAppear = visual.TextStim(win=win, name='letterAppear',
     languageStyle='LTR',
     depth=0.0);
 from numpy.random import choice
-letterAppear_2 = visual.TextStim(win=win, name='letterAppear_2',
-    text=None,
-    font='Times New Roman',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-2.0);
 
 # Initialize components for Routine "practiceRecall"
 practiceRecallClock = core.Clock()
@@ -1583,15 +1576,24 @@ for thisPracticeLoop in practiceLoop:
         if mouseExit.isPressedIn(exitButton):
             continueRoutine = False
         
-        if mouseBlank.isPressedIn(blankButton):
-            clicked.append(blankButton)
-            clickedTrack.append(box)
-            answer1.color = "white"
-            answer2.color = "white"
-            if len(clicked)==1:
-                answer1.setText("Blank")
-            elif len(clicked) ==2:
-               answer2.setText("Blank")
+        
+        if (practiceLoop.finished == False):
+            if mouseBlank.isPressedIn(blankButton):
+                clicked.append(blankButton)
+                clickedTrack.append(box)
+                answer1.color = "white"
+                answer2.color = "white"
+                if len(clicked)==1:
+                    answer1.setText("Blank")
+                elif len(clicked) ==2:
+                    answer2.setText("Blank")
+        else:
+                if mouseBlank.isPressedIn(blankButton):
+                    clicked.append(blankButton)
+                    clickedTrack.append(box)
+                    answer1.color = "white"
+                    if len(clicked)==1:
+                        answer1.setText("Blank")
         
         for box in checkboxes:
             if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked)==0:
@@ -1624,38 +1626,40 @@ for thisPracticeLoop in practiceLoop:
                 elif box.name is "Lbutton":
                     answer1.setText("L")
         
-        for box in checkboxes:
-            if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked) ==1:
-                box.fillColor = "black"
-                clicked.append(box.name)
-                answer2.color = "white"
-                clickedTrack.append(box)
-                if box.name is "Fbutton":
-                    answer2.setText("F")
-                elif box.name is "Pbutton":
-                    answer2.setText("P")
-                elif box.name is "Qbutton":
-                    answer2.setText("Q")
-                elif box.name is "Jbutton":
-                    answer2.setText("J")
-                elif box.name is "Hbutton":
-                    answer2.setText("H")
-                elif box.name is "Kbutton":
-                    answer2.setText("K")
-                elif box.name is "Tbutton":
-                    answer2.setText("T")
-                elif box.name is"Sbutton":
-                    answer2.setText("S")
-                elif box.name is "Nbutton":
-                    answer2.setText("N")
-                elif box.name is "Rbutton":
-                    answer2.setText("R")
-                elif box.name is "Ybutton":
-                    answer2.setText("Y")
-                elif box.name is "Lbutton":
+        
+        if (practiceLoop.finished == False):
+            for box in checkboxes:
+                if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked) ==1:
+                    box.fillColor = "black"
+                    clicked.append(box.name)
+                    answer2.color = "white"
+                    clickedTrack.append(box)
+                    if box.name is "Fbutton":
+                        answer2.setText("F")
+                    elif box.name is "Pbutton":
+                        answer2.setText("P")
+                    elif box.name is "Qbutton":
+                        answer2.setText("Q")
+                    elif box.name is "Jbutton":
+                        answer2.setText("J")
+                    elif box.name is "Hbutton":
+                        answer2.setText("H")
+                    elif box.name is "Kbutton":
+                        answer2.setText("K")
+                    elif box.name is "Tbutton":
+                        answer2.setText("T")
+                    elif box.name is"Sbutton":
+                        answer2.setText("S")
+                    elif box.name is "Nbutton":
+                        answer2.setText("N")
+                    elif box.name is "Rbutton":
+                        answer2.setText("R")
+                    elif box.name is "Ybutton":
+                        answer2.setText("Y")
+                    elif box.name is "Lbutton":
                        answer2.setText("L")
-                elif box.name is "blankButton":
-                    answer2.setText("Blank")
+                    elif box.name is "blankButton":
+                        answer2.setText("Blank")
         
         if mouseClear.isPressedIn(clearButton):
             if len(clicked) ==1:
@@ -2096,18 +2100,27 @@ for thisPracticeLoop in practiceLoop:
     practiceLoop.addData('mouseClear.stopped', mouseClear.tStop)
     #Correct Point System
     correctLettersTrial = 0
+    correctText = ""
     if practiceLoop.finished == True:
         for answer in clicked:
-            if clicked[0] is firstLetter and clicked[1] is secondLetter:
+            if clicked[0] is firstLetter:
                 correctLettersTrial +=1
-                trial.addData('correctLettersTrial', correctLettersTrial)
-                trial.addData('routineTime', timer.getTime())
+                correctText= "Correct!"
+            else:
+                correctText= "Incorrect"
+        trial.addData('correctLettersTrial', correctLettersTrial)
+        trial.addData('routineTime', timer.getTime())
+        trial.addData('Correct/Incorrect', correctText)
     else:
             for answer in clicked:
                 if clicked[0] is firstLetter and clicked[1] is secondLetter:
                     correctLettersPractice +=1
-                trial.addData('correctLettersPractice', correctLettersPractice)
-                trial.addData('routineTime', timer.getTime())
+                    correctText= "Correct!"
+                else:
+                    correctText  = "Incorrect"
+                practiceLoop.addData('Correct/Incorrect', correctText)
+                practiceLoop.addData('correctLettersPractice', correctLettersPractice)
+                practiceLoop.addData('routineTime', timer.getTime())
     # store data for practiceLoop (TrialHandler)
     if len(mouseExit.x): practiceLoop.addData('mouseExit.x', mouseExit.x[0])
     if len(mouseExit.y): practiceLoop.addData('mouseExit.y', mouseExit.y[0])
@@ -2665,6 +2678,7 @@ for thisPracticeSentence in practiceSentence:
     continueRoutine = True
     # update component parameters for each repeat
     clicked =0
+    correct = 0
     
     correctText = ""
     trueButton.fillColor = "white"
@@ -2839,6 +2853,8 @@ for thisPracticeSentence in practiceSentence:
         correctText= "Correct!"
     elif  (correct == 0):
         correctText  = "Incorrect"
+        
+    practiceLoop.addData('correct', correctText)
     practiceSentence.addData('senseText.started', senseText.tStartRefresh)
     practiceSentence.addData('senseText.stopped', senseText.tStopRefresh)
     practiceSentence.addData('trueButton.started', trueButton.tStartRefresh)
@@ -3444,7 +3460,7 @@ for thisTrial in trial:
                 win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
                 text.setAutoDraw(True)
             if text.status == STARTED:  # only update if drawing
-                text.setText(timeText, log=False)
+                text.setText('', log=False)
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3660,6 +3676,13 @@ for thisTrial in trial:
                 thisComponent.setAutoDraw(False)
         sentenceTrial.addData('totalCorrectSentenceTrial', totalCorrectSentenceTrial )
         practiceSentence.addData('correctSentenceTrial', correct)
+        
+        if (correct ==1):
+            correctText= "Correct!"
+        elif  (correct == 0):
+            correctText  = "Incorrect"
+            
+        sentenceTrial.addData('correct', correctText)
         sentenceTrial.addData('senseText_2.started', senseText_2.tStartRefresh)
         sentenceTrial.addData('senseText_2.stopped', senseText_2.tStopRefresh)
         sentenceTrial.addData('trueButton_2.started', trueButton_2.tStartRefresh)
@@ -3687,22 +3710,18 @@ for thisTrial in trial:
     # completed 1 repeats of 'sentenceTrial'
     
     
-    # ------Prepare to start Routine "practiceList"-------
+    # ------Prepare to start Routine "letterTrial_2"-------
     continueRoutine = True
-    routineTimer.add(2.000000)
+    routineTimer.add(1.000000)
     # update component parameters for each repeat
-    letterAppear.setText('')
+    letterAppear_3.setText('')
     letters = ["F", "P", "Q", "J", "H", "K", "T", "S", "N", "R", "Y", "L"]
     firstLetter = choice(letters)
-    letters.remove(firstLetter)
-    secondLetter = choice(letters)
-    letters.append(firstLetter)
     
-    letterAppear.setText(firstLetter)
-    letterAppear_2.setText(secondLetter)
+    letterAppear_3.setText(firstLetter)
     # keep track of which components have finished
-    practiceListComponents = [letterAppear, letterAppear_2]
-    for thisComponent in practiceListComponents:
+    letterTrial_2Components = [letterAppear_3]
+    for thisComponent in letterTrial_2Components:
         thisComponent.tStart = None
         thisComponent.tStop = None
         thisComponent.tStartRefresh = None
@@ -3712,51 +3731,34 @@ for thisTrial in trial:
     # reset timers
     t = 0
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-    practiceListClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+    letterTrial_2Clock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
     frameN = -1
     
-    # -------Run Routine "practiceList"-------
+    # -------Run Routine "letterTrial_2"-------
     while continueRoutine and routineTimer.getTime() > 0:
         # get current time
-        t = practiceListClock.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=practiceListClock)
+        t = letterTrial_2Clock.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=letterTrial_2Clock)
         tThisFlipGlobal = win.getFutureFlipTime(clock=None)
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *letterAppear* updates
-        if letterAppear.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # *letterAppear_3* updates
+        if letterAppear_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            letterAppear.frameNStart = frameN  # exact frame index
-            letterAppear.tStart = t  # local t and not account for scr refresh
-            letterAppear.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(letterAppear, 'tStartRefresh')  # time at next scr refresh
-            letterAppear.setAutoDraw(True)
-        if letterAppear.status == STARTED:
+            letterAppear_3.frameNStart = frameN  # exact frame index
+            letterAppear_3.tStart = t  # local t and not account for scr refresh
+            letterAppear_3.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(letterAppear_3, 'tStartRefresh')  # time at next scr refresh
+            letterAppear_3.setAutoDraw(True)
+        if letterAppear_3.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > letterAppear.tStartRefresh + 1-frameTolerance:
+            if tThisFlipGlobal > letterAppear_3.tStartRefresh + 1-frameTolerance:
                 # keep track of stop time/frame for later
-                letterAppear.tStop = t  # not accounting for scr refresh
-                letterAppear.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(letterAppear, 'tStopRefresh')  # time at next scr refresh
-                letterAppear.setAutoDraw(False)
-        
-        # *letterAppear_2* updates
-        if letterAppear_2.status == NOT_STARTED and tThisFlip >= 1.0-frameTolerance:
-            # keep track of start time/frame for later
-            letterAppear_2.frameNStart = frameN  # exact frame index
-            letterAppear_2.tStart = t  # local t and not account for scr refresh
-            letterAppear_2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(letterAppear_2, 'tStartRefresh')  # time at next scr refresh
-            letterAppear_2.setAutoDraw(True)
-        if letterAppear_2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > letterAppear_2.tStartRefresh + 1.0-frameTolerance:
-                # keep track of stop time/frame for later
-                letterAppear_2.tStop = t  # not accounting for scr refresh
-                letterAppear_2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(letterAppear_2, 'tStopRefresh')  # time at next scr refresh
-                letterAppear_2.setAutoDraw(False)
+                letterAppear_3.tStop = t  # not accounting for scr refresh
+                letterAppear_3.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(letterAppear_3, 'tStopRefresh')  # time at next scr refresh
+                letterAppear_3.setAutoDraw(False)
         
         # check for quit (typically the Esc key)
         if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3766,7 +3768,7 @@ for thisTrial in trial:
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in practiceListComponents:
+        for thisComponent in letterTrial_2Components:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -3775,14 +3777,12 @@ for thisTrial in trial:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # -------Ending Routine "practiceList"-------
-    for thisComponent in practiceListComponents:
+    # -------Ending Routine "letterTrial_2"-------
+    for thisComponent in letterTrial_2Components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    trial.addData('letterAppear.started', letterAppear.tStartRefresh)
-    trial.addData('letterAppear.stopped', letterAppear.tStopRefresh)
-    trial.addData('letterAppear_2.started', letterAppear_2.tStartRefresh)
-    trial.addData('letterAppear_2.stopped', letterAppear_2.tStopRefresh)
+    trial.addData('letterAppear_3.started', letterAppear_3.tStartRefresh)
+    trial.addData('letterAppear_3.stopped', letterAppear_3.tStopRefresh)
     
     # ------Prepare to start Routine "practiceRecall"-------
     continueRoutine = True
@@ -3858,15 +3858,24 @@ for thisTrial in trial:
         if mouseExit.isPressedIn(exitButton):
             continueRoutine = False
         
-        if mouseBlank.isPressedIn(blankButton):
-            clicked.append(blankButton)
-            clickedTrack.append(box)
-            answer1.color = "white"
-            answer2.color = "white"
-            if len(clicked)==1:
-                answer1.setText("Blank")
-            elif len(clicked) ==2:
-               answer2.setText("Blank")
+        
+        if (practiceLoop.finished == False):
+            if mouseBlank.isPressedIn(blankButton):
+                clicked.append(blankButton)
+                clickedTrack.append(box)
+                answer1.color = "white"
+                answer2.color = "white"
+                if len(clicked)==1:
+                    answer1.setText("Blank")
+                elif len(clicked) ==2:
+                    answer2.setText("Blank")
+        else:
+                if mouseBlank.isPressedIn(blankButton):
+                    clicked.append(blankButton)
+                    clickedTrack.append(box)
+                    answer1.color = "white"
+                    if len(clicked)==1:
+                        answer1.setText("Blank")
         
         for box in checkboxes:
             if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked)==0:
@@ -3899,38 +3908,40 @@ for thisTrial in trial:
                 elif box.name is "Lbutton":
                     answer1.setText("L")
         
-        for box in checkboxes:
-            if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked) ==1:
-                box.fillColor = "black"
-                clicked.append(box.name)
-                answer2.color = "white"
-                clickedTrack.append(box)
-                if box.name is "Fbutton":
-                    answer2.setText("F")
-                elif box.name is "Pbutton":
-                    answer2.setText("P")
-                elif box.name is "Qbutton":
-                    answer2.setText("Q")
-                elif box.name is "Jbutton":
-                    answer2.setText("J")
-                elif box.name is "Hbutton":
-                    answer2.setText("H")
-                elif box.name is "Kbutton":
-                    answer2.setText("K")
-                elif box.name is "Tbutton":
-                    answer2.setText("T")
-                elif box.name is"Sbutton":
-                    answer2.setText("S")
-                elif box.name is "Nbutton":
-                    answer2.setText("N")
-                elif box.name is "Rbutton":
-                    answer2.setText("R")
-                elif box.name is "Ybutton":
-                    answer2.setText("Y")
-                elif box.name is "Lbutton":
+        
+        if (practiceLoop.finished == False):
+            for box in checkboxes:
+                if mouse1.isPressedIn(box) and box.name not in clicked and len(clicked) ==1:
+                    box.fillColor = "black"
+                    clicked.append(box.name)
+                    answer2.color = "white"
+                    clickedTrack.append(box)
+                    if box.name is "Fbutton":
+                        answer2.setText("F")
+                    elif box.name is "Pbutton":
+                        answer2.setText("P")
+                    elif box.name is "Qbutton":
+                        answer2.setText("Q")
+                    elif box.name is "Jbutton":
+                        answer2.setText("J")
+                    elif box.name is "Hbutton":
+                        answer2.setText("H")
+                    elif box.name is "Kbutton":
+                        answer2.setText("K")
+                    elif box.name is "Tbutton":
+                        answer2.setText("T")
+                    elif box.name is"Sbutton":
+                        answer2.setText("S")
+                    elif box.name is "Nbutton":
+                        answer2.setText("N")
+                    elif box.name is "Rbutton":
+                        answer2.setText("R")
+                    elif box.name is "Ybutton":
+                        answer2.setText("Y")
+                    elif box.name is "Lbutton":
                        answer2.setText("L")
-                elif box.name is "blankButton":
-                    answer2.setText("Blank")
+                    elif box.name is "blankButton":
+                        answer2.setText("Blank")
         
         if mouseClear.isPressedIn(clearButton):
             if len(clicked) ==1:
@@ -4371,18 +4382,27 @@ for thisTrial in trial:
     trial.addData('mouseClear.stopped', mouseClear.tStop)
     #Correct Point System
     correctLettersTrial = 0
+    correctText = ""
     if practiceLoop.finished == True:
         for answer in clicked:
-            if clicked[0] is firstLetter and clicked[1] is secondLetter:
+            if clicked[0] is firstLetter:
                 correctLettersTrial +=1
-                trial.addData('correctLettersTrial', correctLettersTrial)
-                trial.addData('routineTime', timer.getTime())
+                correctText= "Correct!"
+            else:
+                correctText= "Incorrect"
+        trial.addData('correctLettersTrial', correctLettersTrial)
+        trial.addData('routineTime', timer.getTime())
+        trial.addData('Correct/Incorrect', correctText)
     else:
             for answer in clicked:
                 if clicked[0] is firstLetter and clicked[1] is secondLetter:
                     correctLettersPractice +=1
-                trial.addData('correctLettersPractice', correctLettersPractice)
-                trial.addData('routineTime', timer.getTime())
+                    correctText= "Correct!"
+                else:
+                    correctText  = "Incorrect"
+                practiceLoop.addData('Correct/Incorrect', correctText)
+                practiceLoop.addData('correctLettersPractice', correctLettersPractice)
+                practiceLoop.addData('routineTime', timer.getTime())
     # store data for trial (TrialHandler)
     if len(mouseExit.x): trial.addData('mouseExit.x', mouseExit.x[0])
     if len(mouseExit.y): trial.addData('mouseExit.y', mouseExit.y[0])
