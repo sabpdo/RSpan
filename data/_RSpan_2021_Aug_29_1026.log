@@ -1,0 +1,1304 @@
+0.2996 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+3.1158 	INFO 	Loaded monitor calibration from ['2020_10_12 18:18']
+3.8774 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0., 0., 0.]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x138d2e978>, gamma=None, gammaErrorPolicy='raise', kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x142372b70>, multiSample=False, name='window1', numSamples=2, pos=[360.0, 225.0], screen=0, size=array([2880, 1800]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+3.8778 	EXP 	window1: mouseVisible = True
+3.8778 	EXP 	window1: recordFrameIntervals = False
+4.0425 	EXP 	window1: recordFrameIntervals = True
+4.2257 	DEBUG 	Screen (0) actual frame rate measured at 60.33
+4.2258 	EXP 	window1: recordFrameIntervals = False
+4.3035 	EXP 	Created introScreen = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='introScreen', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='Reading Span', units='height', win=Window(...), wrapWidth=1)
+4.3124 	EXP 	Created responseIndicator1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='responseIndicator1', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.', units='height', win=Window(...), wrapWidth=1)
+4.3126 	EXP 	window1: mouseVisible = True
+4.3300 	EXP 	Created instr_1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_1', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.3324 	EXP 	Created continue_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_2', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.\n', units='height', win=Window(...), wrapWidth=1)
+4.3325 	EXP 	window1: mouseVisible = True
+4.3519 	EXP 	Created instr_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.3543 	EXP 	Created continue_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_3', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.\n\n', units='height', win=Window(...), wrapWidth=1)
+4.3544 	EXP 	window1: mouseVisible = True
+4.3763 	EXP 	Created instr_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_3', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.3810 	EXP 	Created continue_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_4', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.3811 	EXP 	window1: mouseVisible = True
+4.3816 	EXP 	Created letterAppear = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='letterAppear', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.3820 	EXP 	Created letterAppear_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='letterAppear_2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.3821 	EXP 	window1: mouseVisible = True
+4.3822 	EXP 	window1: mouseVisible = True
+4.3822 	EXP 	window1: mouseVisible = True
+4.3835 	EXP 	Created blankButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-4.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='blankButton', opacity=1.0, ori=array(0.), pos=array([ 0.4, -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.3888 	EXP 	Created gatherResponseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='gatherResponseText', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.3901 	EXP 	Created Fbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-6.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Fbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.3]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3915 	EXP 	Created F_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='F_text', opacity=1.0, ori=0, pos=array([-0.23,  0.3 ]), rgb=array([255., 255., 255.]), text='F', units='height', win=Window(...), wrapWidth=1)
+4.3927 	EXP 	Created Pbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-8.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Pbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3940 	EXP 	Created Qbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-9.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Qbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3952 	EXP 	Created Jbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-10.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Jbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0. ]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3964 	EXP 	Created Hbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-11.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Hbutton', opacity=1.0, ori=array(0.), pos=array([-0.3, -0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3975 	EXP 	Created Kbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-12.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Kbutton', opacity=1.0, ori=array(0.), pos=array([-0.3, -0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.3988 	EXP 	Created Tbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-13.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Tbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.3]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4000 	EXP 	Created Sbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-14.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Sbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4012 	EXP 	Created Nbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-15.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Nbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4024 	EXP 	Created Rbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-16.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Rbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0. ]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4035 	EXP 	Created Ybutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-17.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Ybutton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4047 	EXP 	Created Lbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-18.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Lbutton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.4058 	EXP 	Created clearButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-19.0, fillColor='white', fillColorSpace='named', fillRGB=array([255., 255., 255.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='clearButton', opacity=1.0, ori=array(0.), pos=array([ 0. , -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.4068 	EXP 	Created exitButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-20.0, fillColor='white', fillColorSpace='named', fillRGB=array([255., 255., 255.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='exitButton', opacity=1.0, ori=array(0.), pos=array([-0.4, -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.4081 	EXP 	Created exitText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-21.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='exitText', opacity=1.0, ori=0, pos=array([-0.4, -0.4]), rgb=array([0., 0., 0.]), text='EXIT', units='height', win=Window(...), wrapWidth=1)
+4.4096 	EXP 	Created clearText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-22.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='clearText', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([0., 0., 0.]), text='CLEAR', units='height', win=Window(...), wrapWidth=1)
+4.4116 	EXP 	Created P_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-23.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='P_text', opacity=1.0, ori=0, pos=array([-0.23,  0.2 ]), rgb=array([255., 255., 255.]), text='P', units='height', win=Window(...), wrapWidth=1)
+4.4135 	EXP 	Created Q_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-24.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='Q_text', opacity=1.0, ori=0, pos=array([-0.23,  0.1 ]), rgb=array([255., 255., 255.]), text='Q', units='height', win=Window(...), wrapWidth=1)
+4.4153 	EXP 	Created J_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-25.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='J_text', opacity=1.0, ori=0, pos=array([-0.23,  0.  ]), rgb=array([255., 255., 255.]), text='J', units='height', win=Window(...), wrapWidth=1)
+4.4170 	EXP 	Created H_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-26.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='H_text', opacity=1.0, ori=0, pos=array([-0.23, -0.1 ]), rgb=array([255., 255., 255.]), text='H', units='height', win=Window(...), wrapWidth=1)
+4.4183 	EXP 	Created K_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-27.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='K_text', opacity=1.0, ori=0, pos=array([-0.23, -0.2 ]), rgb=array([255., 255., 255.]), text='K', units='height', win=Window(...), wrapWidth=1)
+4.4198 	EXP 	Created T_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-28.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='T_text', opacity=1.0, ori=0, pos=array([0.27, 0.3 ]), rgb=array([255., 255., 255.]), text='T', units='height', win=Window(...), wrapWidth=1)
+4.4210 	EXP 	Created S_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-29.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='S_text', opacity=1.0, ori=0, pos=array([0.27, 0.2 ]), rgb=array([255., 255., 255.]), text='S', units='height', win=Window(...), wrapWidth=1)
+4.4222 	EXP 	Created N_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-30.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='N_text', opacity=1.0, ori=0, pos=array([0.27, 0.1 ]), rgb=array([255., 255., 255.]), text='N', units='height', win=Window(...), wrapWidth=1)
+4.4235 	EXP 	Created R_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-31.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='R_text', opacity=1.0, ori=0, pos=array([0.27, 0.  ]), rgb=array([255., 255., 255.]), text='R', units='height', win=Window(...), wrapWidth=1)
+4.4247 	EXP 	Created Y_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-32.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='Y_text', opacity=1.0, ori=0, pos=array([ 0.27, -0.1 ]), rgb=array([255., 255., 255.]), text='Y', units='height', win=Window(...), wrapWidth=1)
+4.4259 	EXP 	Created L_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-33.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='L_text', opacity=1.0, ori=0, pos=array([ 0.27, -0.2 ]), rgb=array([255., 255., 255.]), text='L', units='height', win=Window(...), wrapWidth=1)
+4.4281 	EXP 	Created blankText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-34.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='blankText', opacity=1.0, ori=0, pos=array([ 0.4, -0.4]), rgb=array([0., 0., 0.]), text='BLANK', units='height', win=Window(...), wrapWidth=1)
+4.4286 	EXP 	Created answer1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='grey', colorSpace='named', contrast=1.0, depth=-35.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='answer1', opacity=1.0, ori=0, pos=array([-0.05, -0.2 ]), rgb=array([128., 128., 128.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.4290 	EXP 	Created answer2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='grey', colorSpace='named', contrast=1.0, depth=-36.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='answer2', opacity=1.0, ori=0, pos=array([ 0.05, -0.2 ]), rgb=array([128., 128., 128.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.4292 	EXP 	window1: mouseVisible = True
+4.4464 	EXP 	Created instr_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_4', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.4488 	EXP 	Created continue_5 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_5', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.\n', units='height', win=Window(...), wrapWidth=1)
+4.4489 	EXP 	window1: mouseVisible = True
+4.4631 	EXP 	Created instr_5 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_5', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.4654 	EXP 	Created continue_6 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_6', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.', units='height', win=Window(...), wrapWidth=1)
+4.4655 	EXP 	window1: mouseVisible = True
+4.4740 	EXP 	Created instr_6 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_6', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.4773 	EXP 	Created continue_7 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_7', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.4774 	EXP 	window1: mouseVisible = True
+4.4806 	EXP 	Created sentenceText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='sentenceText', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+4.4839 	EXP 	Created continue_12 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_12', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.4840 	EXP 	window1: mouseVisible = True
+4.4894 	EXP 	Created senseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='senseText', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([255., 255., 255.]), text='This sentence makes sense.', units='height', win=Window(...), wrapWidth=1)
+4.4908 	EXP 	Created trueButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-2.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='trueButton', opacity=1.0, ori=array(0.), pos=array([-0.2, -0.2]), size=array([0.15, 0.15]), units='height', vertices=ndarray(...), win=Window(...))
+4.4921 	EXP 	Created trueText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='trueText', opacity=1.0, ori=0, pos=array([-0.2, -0.2]), rgb=array([0., 0., 0.]), text='TRUE', units='height', win=Window(...), wrapWidth=1)
+4.4934 	EXP 	Created falseButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-4.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='falseButton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.2]), size=array([0.15, 0.15]), units='height', vertices=ndarray(...), win=Window(...))
+4.4949 	EXP 	Created falseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='falseText', opacity=1.0, ori=0, pos=array([ 0.2, -0.2]), rgb=array([0., 0., 0.]), text='FALSE', units='height', win=Window(...), wrapWidth=1)
+4.4950 	EXP 	window1: mouseVisible = True
+4.4968 	EXP 	Created sentenceFeedback2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='blue', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='sentenceFeedback2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+4.5204 	EXP 	Created instr_7 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_7', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5226 	EXP 	Created continue_8 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_8', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse to continue.\n\n', units='height', win=Window(...), wrapWidth=1)
+4.5228 	EXP 	window1: mouseVisible = True
+4.5411 	EXP 	Created instr_8 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_8', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5434 	EXP 	Created continue_9 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_9', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text='Click the mouse button to continue.\n', units='height', win=Window(...), wrapWidth=1)
+4.5435 	EXP 	window1: mouseVisible = True
+4.5504 	EXP 	Created instr_9 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_9', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5541 	EXP 	Created continue_10 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_10', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5543 	EXP 	window1: mouseVisible = True
+4.5731 	EXP 	Created instr_10 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instr_10', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5771 	EXP 	Created continue_11 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_11', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5772 	EXP 	window1: mouseVisible = True
+4.5792 	EXP 	Created sentenceText2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='sentenceText2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+4.5793 	EXP 	window1: mouseVisible = True
+4.5825 	EXP 	Created continue_13 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='continue_13', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.5919 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0, pos=array([ 0.4, -0.4]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+4.5992 	EXP 	Created senseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='senseText', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([255., 255., 255.]), text='This sentence makes sense.', units='height', win=Window(...), wrapWidth=1)
+4.6005 	EXP 	Created trueButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-2.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='trueButton', opacity=1.0, ori=array(0.), pos=array([-0.2, -0.2]), size=array([0.15, 0.15]), units='height', vertices=ndarray(...), win=Window(...))
+4.6035 	EXP 	Created trueText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='trueText', opacity=1.0, ori=0, pos=array([-0.2, -0.2]), rgb=array([0., 0., 0.]), text='TRUE', units='height', win=Window(...), wrapWidth=1)
+4.6049 	EXP 	Created falseButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-4.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='falseButton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.2]), size=array([0.15, 0.15]), units='height', vertices=ndarray(...), win=Window(...))
+4.6080 	EXP 	Created falseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='falseText', opacity=1.0, ori=0, pos=array([ 0.2, -0.2]), rgb=array([0., 0., 0.]), text='FALSE', units='height', win=Window(...), wrapWidth=1)
+4.6081 	EXP 	window1: mouseVisible = True
+4.6086 	EXP 	Created letterAppear = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='letterAppear', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.6091 	EXP 	Created letterAppear_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='letterAppear_2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.6092 	EXP 	window1: mouseVisible = True
+4.6093 	EXP 	window1: mouseVisible = True
+4.6093 	EXP 	window1: mouseVisible = True
+4.6106 	EXP 	Created blankButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-4.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='blankButton', opacity=1.0, ori=array(0.), pos=array([ 0.4, -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.6196 	EXP 	Created gatherResponseText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='gatherResponseText', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+4.6208 	EXP 	Created Fbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-6.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Fbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.3]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6221 	EXP 	Created F_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='F_text', opacity=1.0, ori=0, pos=array([-0.23,  0.3 ]), rgb=array([255., 255., 255.]), text='F', units='height', win=Window(...), wrapWidth=1)
+4.6234 	EXP 	Created Pbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-8.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Pbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6246 	EXP 	Created Qbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-9.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Qbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6258 	EXP 	Created Jbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-10.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Jbutton', opacity=1.0, ori=array(0.), pos=array([-0.3,  0. ]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6270 	EXP 	Created Hbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-11.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Hbutton', opacity=1.0, ori=array(0.), pos=array([-0.3, -0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6283 	EXP 	Created Kbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-12.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Kbutton', opacity=1.0, ori=array(0.), pos=array([-0.3, -0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6295 	EXP 	Created Tbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-13.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Tbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.3]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6307 	EXP 	Created Sbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-14.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Sbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6319 	EXP 	Created Nbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-15.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Nbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6331 	EXP 	Created Rbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-16.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Rbutton', opacity=1.0, ori=array(0.), pos=array([0.2, 0. ]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6343 	EXP 	Created Ybutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-17.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Ybutton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.1]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6355 	EXP 	Created Lbutton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-18.0, fillColor=array([1., 1., 1.]), fillColorSpace='rgb', fillRGB=array([1., 1., 1.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='Lbutton', opacity=1.0, ori=array(0.), pos=array([ 0.2, -0.2]), size=array([0.05, 0.05]), units='height', vertices=ndarray(...), win=Window(...))
+4.6365 	EXP 	Created clearButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-19.0, fillColor='white', fillColorSpace='named', fillRGB=array([255., 255., 255.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='clearButton', opacity=1.0, ori=array(0.), pos=array([ 0. , -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.6375 	EXP 	Created exitButton = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace=None, contrast=1.0, depth=-20.0, fillColor='white', fillColorSpace='named', fillRGB=array([255., 255., 255.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1., 1., 1.]), lineWidth=1, name='exitButton', opacity=1.0, ori=array(0.), pos=array([-0.4, -0.4]), size=array([0.15, 0.08]), units='height', vertices=ndarray(...), win=Window(...))
+4.6399 	EXP 	Created exitText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-21.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='exitText', opacity=1.0, ori=0, pos=array([-0.4, -0.4]), rgb=array([0., 0., 0.]), text='EXIT', units='height', win=Window(...), wrapWidth=1)
+4.6418 	EXP 	Created clearText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-22.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='clearText', opacity=1.0, ori=0, pos=array([ 0. , -0.4]), rgb=array([0., 0., 0.]), text='CLEAR', units='height', win=Window(...), wrapWidth=1)
+4.6435 	EXP 	Created P_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-23.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='P_text', opacity=1.0, ori=0, pos=array([-0.23,  0.2 ]), rgb=array([255., 255., 255.]), text='P', units='height', win=Window(...), wrapWidth=1)
+4.6453 	EXP 	Created Q_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-24.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='Q_text', opacity=1.0, ori=0, pos=array([-0.23,  0.1 ]), rgb=array([255., 255., 255.]), text='Q', units='height', win=Window(...), wrapWidth=1)
+4.6470 	EXP 	Created J_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-25.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='J_text', opacity=1.0, ori=0, pos=array([-0.23,  0.  ]), rgb=array([255., 255., 255.]), text='J', units='height', win=Window(...), wrapWidth=1)
+4.6488 	EXP 	Created H_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-26.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='H_text', opacity=1.0, ori=0, pos=array([-0.23, -0.1 ]), rgb=array([255., 255., 255.]), text='H', units='height', win=Window(...), wrapWidth=1)
+4.6511 	EXP 	Created K_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-27.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='K_text', opacity=1.0, ori=0, pos=array([-0.23, -0.2 ]), rgb=array([255., 255., 255.]), text='K', units='height', win=Window(...), wrapWidth=1)
+4.6528 	EXP 	Created T_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-28.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='T_text', opacity=1.0, ori=0, pos=array([0.27, 0.3 ]), rgb=array([255., 255., 255.]), text='T', units='height', win=Window(...), wrapWidth=1)
+4.6544 	EXP 	Created S_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-29.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='S_text', opacity=1.0, ori=0, pos=array([0.27, 0.2 ]), rgb=array([255., 255., 255.]), text='S', units='height', win=Window(...), wrapWidth=1)
+4.6564 	EXP 	Created N_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-30.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='N_text', opacity=1.0, ori=0, pos=array([0.27, 0.1 ]), rgb=array([255., 255., 255.]), text='N', units='height', win=Window(...), wrapWidth=1)
+4.6579 	EXP 	Created R_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-31.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='R_text', opacity=1.0, ori=0, pos=array([0.27, 0.  ]), rgb=array([255., 255., 255.]), text='R', units='height', win=Window(...), wrapWidth=1)
+4.6609 	EXP 	Created Y_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-32.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='Y_text', opacity=1.0, ori=0, pos=array([ 0.27, -0.1 ]), rgb=array([255., 255., 255.]), text='Y', units='height', win=Window(...), wrapWidth=1)
+4.6623 	EXP 	Created L_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-33.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='L_text', opacity=1.0, ori=0, pos=array([ 0.27, -0.2 ]), rgb=array([255., 255., 255.]), text='L', units='height', win=Window(...), wrapWidth=1)
+4.6644 	EXP 	Created blankText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-34.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='blankText', opacity=1.0, ori=0, pos=array([ 0.4, -0.4]), rgb=array([0., 0., 0.]), text='BLANK', units='height', win=Window(...), wrapWidth=1)
+4.6649 	EXP 	Created answer1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='grey', colorSpace='named', contrast=1.0, depth=-35.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='answer1', opacity=1.0, ori=0, pos=array([-0.05, -0.2 ]), rgb=array([128., 128., 128.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.6654 	EXP 	Created answer2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color='grey', colorSpace='named', contrast=1.0, depth=-36.0, flipHoriz=False, flipVert=False, font='Times New Roman', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='answer2', opacity=1.0, ori=0, pos=array([ 0.05, -0.2 ]), rgb=array([128., 128., 128.]), text='', units='height', win=Window(...), wrapWidth=1)
+4.6655 	EXP 	window1: mouseVisible = True
+4.6928 	EXP 	introScreen: autoDraw = True
+4.6928 	EXP 	responseIndicator1: autoDraw = True
+5.3659 	DATA 	Mouse: Left button down, pos=(557,499)
+5.3806 	EXP 	introScreen: autoDraw = False
+5.3806 	EXP 	responseIndicator1: autoDraw = False
+5.3806 	EXP 	instr_1: autoDraw = True
+5.3806 	EXP 	continue_2: autoDraw = True
+5.4659 	DATA 	Mouse:  Left button up, pos=(557,499)
+5.7155 	DATA 	Mouse: Left button down, pos=(557,499)
+5.7425 	EXP 	instr_1: autoDraw = False
+5.7425 	EXP 	continue_2: autoDraw = False
+5.7425 	EXP 	instr_2: autoDraw = True
+5.7425 	EXP 	continue_3: autoDraw = True
+5.8268 	DATA 	Mouse:  Left button up, pos=(557,499)
+6.0445 	DATA 	Mouse: Left button down, pos=(557,499)
+6.0597 	EXP 	instr_2: autoDraw = False
+6.0597 	EXP 	continue_3: autoDraw = False
+6.0597 	EXP 	instr_3: autoDraw = True
+6.0597 	EXP 	continue_4: autoDraw = True
+6.1445 	DATA 	Mouse:  Left button up, pos=(557,499)
+6.4128 	DATA 	Mouse: Left button down, pos=(557,499)
+6.4380 	DEBUG 	Read Excel file with pandas: practiceLetter.xlsx
+6.4407 	DEBUG 	Clearing unnamed columns from practiceLetter.xlsx
+6.4411 	EXP 	Imported practiceLetter.xlsx as conditions, 2 conditions, 2 params
+6.4413 	EXP 	Created sequence: sequential, trialTypes=2, nReps=1, seed=None
+6.4416 	EXP 	New trial (rep=0, index=0): OrderedDict([('FirstLetter', 1), ('SecondLetter', None)])
+6.4616 	EXP 	instr_3: autoDraw = False
+6.4616 	EXP 	continue_4: autoDraw = False
+6.4616 	EXP 	letterAppear: text = ''
+6.4616 	EXP 	letterAppear: text = 'H'
+6.4616 	EXP 	letterAppear_2: text = 'P'
+6.4616 	EXP 	letterAppear: autoDraw = True
+6.5305 	DATA 	Mouse:  Left button up, pos=(557,499)
+7.4449 	EXP 	letterAppear_2: autoDraw = True
+7.4615 	EXP 	letterAppear: autoDraw = False
+8.4786 	EXP 	letterAppear: autoDraw = False
+8.4786 	EXP 	letterAppear_2: autoDraw = False
+8.4786 	EXP 	Fbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Pbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Qbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Jbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Hbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Kbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Tbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Sbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Nbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Rbutton: fillColor = 'green (named)'
+8.4786 	EXP 	Ybutton: fillColor = 'green (named)'
+8.4786 	EXP 	Lbutton: fillColor = 'green (named)'
+8.4786 	EXP 	answer1: text = ''
+8.4786 	EXP 	answer2: text = ''
+8.4786 	EXP 	blankButton: autoDraw = True
+8.4786 	EXP 	gatherResponseText: autoDraw = True
+8.4786 	EXP 	Fbutton: autoDraw = True
+8.4786 	EXP 	F_text: autoDraw = True
+8.4786 	EXP 	Pbutton: autoDraw = True
+8.4786 	EXP 	Qbutton: autoDraw = True
+8.4786 	EXP 	Jbutton: autoDraw = True
+8.4786 	EXP 	Hbutton: autoDraw = True
+8.4786 	EXP 	Kbutton: autoDraw = True
+8.4786 	EXP 	Tbutton: autoDraw = True
+8.4786 	EXP 	Sbutton: autoDraw = True
+8.4786 	EXP 	Nbutton: autoDraw = True
+8.4786 	EXP 	Rbutton: autoDraw = True
+8.4786 	EXP 	Ybutton: autoDraw = True
+8.4786 	EXP 	Lbutton: autoDraw = True
+8.4786 	EXP 	clearButton: autoDraw = True
+8.4786 	EXP 	exitButton: autoDraw = True
+8.4786 	EXP 	exitText: autoDraw = True
+8.4786 	EXP 	clearText: autoDraw = True
+8.4786 	EXP 	P_text: autoDraw = True
+8.4786 	EXP 	Q_text: autoDraw = True
+8.4786 	EXP 	J_text: autoDraw = True
+8.4786 	EXP 	H_text: autoDraw = True
+8.4786 	EXP 	K_text: autoDraw = True
+8.4786 	EXP 	T_text: autoDraw = True
+8.4786 	EXP 	S_text: autoDraw = True
+8.4786 	EXP 	N_text: autoDraw = True
+8.4786 	EXP 	R_text: autoDraw = True
+8.4786 	EXP 	Y_text: autoDraw = True
+8.4786 	EXP 	L_text: autoDraw = True
+8.4786 	EXP 	blankText: autoDraw = True
+8.4786 	EXP 	answer1: autoDraw = True
+8.4786 	EXP 	answer2: autoDraw = True
+8.9126 	DATA 	Mouse: Left button down, pos=(306,103)
+8.9433 	EXP 	New trial (rep=0, index=1): OrderedDict([('FirstLetter', 2), ('SecondLetter', None)])
+8.9611 	EXP 	blankButton: autoDraw = False
+8.9611 	EXP 	gatherResponseText: autoDraw = False
+8.9611 	EXP 	Fbutton: autoDraw = False
+8.9611 	EXP 	F_text: autoDraw = False
+8.9611 	EXP 	Pbutton: autoDraw = False
+8.9611 	EXP 	Qbutton: autoDraw = False
+8.9611 	EXP 	Jbutton: autoDraw = False
+8.9611 	EXP 	Hbutton: autoDraw = False
+8.9611 	EXP 	Kbutton: autoDraw = False
+8.9611 	EXP 	Tbutton: autoDraw = False
+8.9611 	EXP 	Sbutton: autoDraw = False
+8.9611 	EXP 	Nbutton: autoDraw = False
+8.9611 	EXP 	Rbutton: autoDraw = False
+8.9611 	EXP 	Ybutton: autoDraw = False
+8.9611 	EXP 	Lbutton: autoDraw = False
+8.9611 	EXP 	clearButton: autoDraw = False
+8.9611 	EXP 	exitButton: autoDraw = False
+8.9611 	EXP 	exitText: autoDraw = False
+8.9611 	EXP 	clearText: autoDraw = False
+8.9611 	EXP 	P_text: autoDraw = False
+8.9611 	EXP 	Q_text: autoDraw = False
+8.9611 	EXP 	J_text: autoDraw = False
+8.9611 	EXP 	H_text: autoDraw = False
+8.9611 	EXP 	K_text: autoDraw = False
+8.9611 	EXP 	T_text: autoDraw = False
+8.9611 	EXP 	S_text: autoDraw = False
+8.9611 	EXP 	N_text: autoDraw = False
+8.9611 	EXP 	R_text: autoDraw = False
+8.9611 	EXP 	Y_text: autoDraw = False
+8.9611 	EXP 	L_text: autoDraw = False
+8.9611 	EXP 	blankText: autoDraw = False
+8.9611 	EXP 	answer1: autoDraw = False
+8.9611 	EXP 	answer2: autoDraw = False
+8.9611 	EXP 	letterAppear: text = ''
+8.9611 	EXP 	letterAppear: text = 'N'
+8.9611 	EXP 	letterAppear_2: text = 'Y'
+8.9611 	EXP 	letterAppear: autoDraw = True
+8.9966 	DATA 	Mouse:  Left button up, pos=(307,103)
+9.9446 	EXP 	letterAppear_2: autoDraw = True
+9.9616 	EXP 	letterAppear: autoDraw = False
+10.9608 	EXP 	letterAppear_2: autoDraw = False
+10.9608 	EXP 	letterAppear: autoDraw = False
+10.9608 	EXP 	letterAppear_2: autoDraw = False
+10.9608 	EXP 	Fbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Pbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Qbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Jbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Hbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Kbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Tbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Sbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Nbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Rbutton: fillColor = 'green (named)'
+10.9608 	EXP 	Ybutton: fillColor = 'green (named)'
+10.9608 	EXP 	Lbutton: fillColor = 'green (named)'
+10.9608 	EXP 	answer1: text = ''
+10.9608 	EXP 	answer2: text = ''
+10.9608 	EXP 	blankButton: autoDraw = True
+10.9608 	EXP 	gatherResponseText: autoDraw = True
+10.9608 	EXP 	Fbutton: autoDraw = True
+10.9608 	EXP 	F_text: autoDraw = True
+10.9608 	EXP 	Pbutton: autoDraw = True
+10.9608 	EXP 	Qbutton: autoDraw = True
+10.9608 	EXP 	Jbutton: autoDraw = True
+10.9608 	EXP 	Hbutton: autoDraw = True
+10.9608 	EXP 	Kbutton: autoDraw = True
+10.9608 	EXP 	Tbutton: autoDraw = True
+10.9608 	EXP 	Sbutton: autoDraw = True
+10.9608 	EXP 	Nbutton: autoDraw = True
+10.9608 	EXP 	Rbutton: autoDraw = True
+10.9608 	EXP 	Ybutton: autoDraw = True
+10.9608 	EXP 	Lbutton: autoDraw = True
+10.9608 	EXP 	clearButton: autoDraw = True
+10.9608 	EXP 	exitButton: autoDraw = True
+10.9608 	EXP 	exitText: autoDraw = True
+10.9608 	EXP 	clearText: autoDraw = True
+10.9608 	EXP 	P_text: autoDraw = True
+10.9608 	EXP 	Q_text: autoDraw = True
+10.9608 	EXP 	J_text: autoDraw = True
+10.9608 	EXP 	H_text: autoDraw = True
+10.9608 	EXP 	K_text: autoDraw = True
+10.9608 	EXP 	T_text: autoDraw = True
+10.9608 	EXP 	S_text: autoDraw = True
+10.9608 	EXP 	N_text: autoDraw = True
+10.9608 	EXP 	R_text: autoDraw = True
+10.9608 	EXP 	Y_text: autoDraw = True
+10.9608 	EXP 	L_text: autoDraw = True
+10.9608 	EXP 	blankText: autoDraw = True
+10.9608 	EXP 	answer1: autoDraw = True
+10.9608 	EXP 	answer2: autoDraw = True
+11.1969 	DATA 	Mouse: Left button down, pos=(505,282)
+11.2753 	DATA 	Mouse:  Left button up, pos=(505,282)
+11.7623 	DATA 	Mouse: Left button down, pos=(387,103)
+11.7944 	EXP 	blankButton: autoDraw = False
+11.7944 	EXP 	gatherResponseText: autoDraw = False
+11.7944 	EXP 	Fbutton: autoDraw = False
+11.7944 	EXP 	F_text: autoDraw = False
+11.7944 	EXP 	Pbutton: autoDraw = False
+11.7944 	EXP 	Qbutton: autoDraw = False
+11.7944 	EXP 	Jbutton: autoDraw = False
+11.7944 	EXP 	Hbutton: autoDraw = False
+11.7944 	EXP 	Kbutton: autoDraw = False
+11.7944 	EXP 	Tbutton: autoDraw = False
+11.7944 	EXP 	Sbutton: autoDraw = False
+11.7944 	EXP 	Nbutton: autoDraw = False
+11.7944 	EXP 	Rbutton: autoDraw = False
+11.7944 	EXP 	Ybutton: autoDraw = False
+11.7944 	EXP 	Lbutton: autoDraw = False
+11.7944 	EXP 	clearButton: autoDraw = False
+11.7944 	EXP 	exitButton: autoDraw = False
+11.7944 	EXP 	exitText: autoDraw = False
+11.7944 	EXP 	clearText: autoDraw = False
+11.7944 	EXP 	P_text: autoDraw = False
+11.7944 	EXP 	Q_text: autoDraw = False
+11.7944 	EXP 	J_text: autoDraw = False
+11.7944 	EXP 	H_text: autoDraw = False
+11.7944 	EXP 	K_text: autoDraw = False
+11.7944 	EXP 	T_text: autoDraw = False
+11.7944 	EXP 	S_text: autoDraw = False
+11.7944 	EXP 	N_text: autoDraw = False
+11.7944 	EXP 	R_text: autoDraw = False
+11.7944 	EXP 	Y_text: autoDraw = False
+11.7944 	EXP 	L_text: autoDraw = False
+11.7944 	EXP 	blankText: autoDraw = False
+11.7944 	EXP 	answer1: autoDraw = False
+11.7944 	EXP 	answer2: autoDraw = False
+11.7944 	EXP 	instr_4: autoDraw = True
+11.7944 	EXP 	continue_5: autoDraw = True
+11.8480 	DATA 	Mouse:  Left button up, pos=(387,102)
+12.4291 	DATA 	Mouse: Left button down, pos=(563,263)
+12.4441 	EXP 	instr_4: autoDraw = False
+12.4441 	EXP 	continue_5: autoDraw = False
+12.4441 	EXP 	instr_5: autoDraw = True
+12.4441 	EXP 	continue_6: autoDraw = True
+12.4962 	DATA 	Mouse:  Left button up, pos=(563,263)
+12.7297 	DATA 	Mouse: Left button down, pos=(563,263)
+12.7446 	EXP 	instr_5: autoDraw = False
+12.7446 	EXP 	continue_6: autoDraw = False
+12.7446 	EXP 	instr_6: autoDraw = True
+12.7446 	EXP 	continue_7: autoDraw = True
+12.8125 	DATA 	Mouse:  Left button up, pos=(563,263)
+13.0471 	DATA 	Mouse: Left button down, pos=(563,263)
+13.0563 	DEBUG 	Read Excel file with pandas: sentenceProblems.xlsx
+13.0579 	DEBUG 	Clearing unnamed columns from sentenceProblems.xlsx
+13.0588 	EXP 	Imported sentenceProblems.xlsx as conditions, 15 conditions, 3 params
+13.0592 	EXP 	Created sequence: sequential, trialTypes=15, nReps=1, seed=None
+13.0596 	EXP 	New trial (rep=0, index=0): OrderedDict([('ID', 1), ('sentence', 'Andy was stopped by the policeman because he crossed the yellow heaven.\xa0 \xa0'), ('CorrectResp', 'correct')])
+13.0940 	EXP 	instr_6: autoDraw = False
+13.0940 	EXP 	continue_7: autoDraw = False
+13.0940 	EXP 	sentenceText: text = 'Andy was stopped by the policeman because he crossed the yellow heaven.\xa0 \xa0'
+13.0940 	EXP 	sentenceText: autoDraw = True
+13.0940 	EXP 	continue_12: autoDraw = True
+13.1298 	DATA 	Mouse:  Left button up, pos=(563,263)
+13.4985 	DATA 	Mouse: Left button down, pos=(563,263)
+13.5440 	EXP 	sentenceText: autoDraw = False
+13.5440 	EXP 	continue_12: autoDraw = False
+13.5440 	EXP 	trueButton: fillColor = 'white'
+13.5440 	EXP 	falseButton: fillColor = 'white'
+13.5440 	EXP 	trueButton: fillColor = 'white (named)'
+13.5440 	EXP 	falseButton: fillColor = 'white (named)'
+13.5440 	EXP 	trueButton: fillColor = 'green'
+13.5440 	EXP 	senseText: autoDraw = True
+13.5440 	EXP 	trueButton: autoDraw = True
+13.5440 	EXP 	trueText: autoDraw = True
+13.5440 	EXP 	falseButton: autoDraw = True
+13.5440 	EXP 	falseText: autoDraw = True
+13.5611 	EXP 	trueButton: fillColor = 'white'
+13.5611 	EXP 	falseButton: fillColor = 'white'
+13.5779 	EXP 	trueButton: fillColor = 'white'
+13.5779 	EXP 	falseButton: fillColor = 'white'
+13.5949 	EXP 	trueButton: fillColor = 'white'
+13.5949 	EXP 	falseButton: fillColor = 'white'
+13.5962 	DATA 	Mouse:  Left button up, pos=(563,263)
+13.6112 	EXP 	trueButton: fillColor = 'white'
+13.6112 	EXP 	falseButton: fillColor = 'white'
+13.6276 	EXP 	trueButton: fillColor = 'white'
+13.6276 	EXP 	falseButton: fillColor = 'white'
+13.6449 	EXP 	trueButton: fillColor = 'white'
+13.6449 	EXP 	falseButton: fillColor = 'white'
+13.6615 	EXP 	trueButton: fillColor = 'white'
+13.6615 	EXP 	falseButton: fillColor = 'white'
+13.6782 	EXP 	trueButton: fillColor = 'white'
+13.6782 	EXP 	falseButton: fillColor = 'white'
+13.6948 	EXP 	trueButton: fillColor = 'white'
+13.6948 	EXP 	falseButton: fillColor = 'white'
+13.7114 	EXP 	trueButton: fillColor = 'white'
+13.7114 	EXP 	falseButton: fillColor = 'white'
+13.7282 	EXP 	trueButton: fillColor = 'white'
+13.7282 	EXP 	falseButton: fillColor = 'white'
+13.7449 	EXP 	trueButton: fillColor = 'white'
+13.7449 	EXP 	falseButton: fillColor = 'white'
+13.7616 	EXP 	trueButton: fillColor = 'white'
+13.7616 	EXP 	falseButton: fillColor = 'white'
+13.7782 	EXP 	trueButton: fillColor = 'white'
+13.7782 	EXP 	falseButton: fillColor = 'white'
+13.7948 	EXP 	trueButton: fillColor = 'white'
+13.7948 	EXP 	falseButton: fillColor = 'white'
+13.8114 	EXP 	trueButton: fillColor = 'white'
+13.8114 	EXP 	falseButton: fillColor = 'white'
+13.8281 	EXP 	trueButton: fillColor = 'white'
+13.8281 	EXP 	falseButton: fillColor = 'white'
+13.8442 	EXP 	trueButton: fillColor = 'white'
+13.8442 	EXP 	falseButton: fillColor = 'white'
+13.8614 	EXP 	trueButton: fillColor = 'white'
+13.8614 	EXP 	falseButton: fillColor = 'white'
+13.8776 	EXP 	trueButton: fillColor = 'white'
+13.8776 	EXP 	falseButton: fillColor = 'white'
+13.8948 	EXP 	trueButton: fillColor = 'white'
+13.8948 	EXP 	falseButton: fillColor = 'white'
+13.9116 	EXP 	trueButton: fillColor = 'white'
+13.9116 	EXP 	falseButton: fillColor = 'white'
+13.9283 	EXP 	trueButton: fillColor = 'white'
+13.9283 	EXP 	falseButton: fillColor = 'white'
+13.9450 	EXP 	trueButton: fillColor = 'white'
+13.9450 	EXP 	falseButton: fillColor = 'white'
+13.9615 	EXP 	trueButton: fillColor = 'white'
+13.9615 	EXP 	falseButton: fillColor = 'white'
+13.9781 	EXP 	trueButton: fillColor = 'white'
+13.9781 	EXP 	falseButton: fillColor = 'white'
+13.9792 	DATA 	Mouse: Left button down, pos=(563,263)
+14.0109 	EXP 	trueButton: fillColor = 'white'
+14.0109 	EXP 	falseButton: fillColor = 'white'
+14.0109 	EXP 	senseText: autoDraw = False
+14.0109 	EXP 	trueButton: autoDraw = False
+14.0109 	EXP 	trueText: autoDraw = False
+14.0109 	EXP 	falseButton: autoDraw = False
+14.0109 	EXP 	falseText: autoDraw = False
+14.0109 	EXP 	sentenceFeedback2: text = 'Correct!'
+14.0109 	EXP 	sentenceFeedback2: autoDraw = True
+14.0808 	DATA 	Mouse:  Left button up, pos=(563,263)
+14.9964 	EXP 	New trial (rep=0, index=1): OrderedDict([('ID', 2), ('sentence', 'During winter you can get a room at the beach for a very low rate.'), ('CorrectResp', 'incorrect')])
+15.0277 	EXP 	sentenceFeedback2: autoDraw = False
+15.0277 	EXP 	sentenceFeedback2: text = 'Correct!'
+15.0277 	EXP 	sentenceText: text = 'During winter you can get a room at the beach for a very low rate.'
+15.0277 	EXP 	sentenceText: autoDraw = True
+15.0277 	EXP 	continue_12: autoDraw = True
+15.4963 	DATA 	Mouse: Left button down, pos=(563,263)
+15.5125 	EXP 	sentenceText: autoDraw = False
+15.5125 	EXP 	continue_12: autoDraw = False
+15.5125 	EXP 	trueButton: fillColor = 'white'
+15.5125 	EXP 	falseButton: fillColor = 'white'
+15.5125 	EXP 	trueButton: fillColor = 'white (named)'
+15.5125 	EXP 	falseButton: fillColor = 'white (named)'
+15.5125 	EXP 	trueButton: fillColor = 'green'
+15.5125 	EXP 	senseText: autoDraw = True
+15.5125 	EXP 	trueButton: autoDraw = True
+15.5125 	EXP 	trueText: autoDraw = True
+15.5125 	EXP 	falseButton: autoDraw = True
+15.5125 	EXP 	falseText: autoDraw = True
+15.5272 	EXP 	trueButton: fillColor = 'white'
+15.5272 	EXP 	falseButton: fillColor = 'white'
+15.5448 	EXP 	trueButton: fillColor = 'white'
+15.5448 	EXP 	falseButton: fillColor = 'white'
+15.5618 	EXP 	trueButton: fillColor = 'white'
+15.5618 	EXP 	falseButton: fillColor = 'white'
+15.5773 	EXP 	trueButton: fillColor = 'white'
+15.5773 	EXP 	falseButton: fillColor = 'white'
+15.5796 	DATA 	Mouse:  Left button up, pos=(563,263)
+15.5948 	EXP 	trueButton: fillColor = 'white'
+15.5948 	EXP 	falseButton: fillColor = 'white'
+15.6112 	EXP 	trueButton: fillColor = 'white'
+15.6112 	EXP 	falseButton: fillColor = 'white'
+15.6275 	EXP 	trueButton: fillColor = 'white'
+15.6275 	EXP 	falseButton: fillColor = 'white'
+15.6439 	EXP 	trueButton: fillColor = 'white'
+15.6439 	EXP 	falseButton: fillColor = 'white'
+15.6610 	EXP 	trueButton: fillColor = 'white'
+15.6610 	EXP 	falseButton: fillColor = 'white'
+15.6774 	EXP 	trueButton: fillColor = 'white'
+15.6774 	EXP 	falseButton: fillColor = 'white'
+15.6949 	EXP 	trueButton: fillColor = 'white'
+15.6949 	EXP 	falseButton: fillColor = 'white'
+15.7115 	EXP 	trueButton: fillColor = 'white'
+15.7115 	EXP 	falseButton: fillColor = 'white'
+15.7282 	EXP 	trueButton: fillColor = 'white'
+15.7282 	EXP 	falseButton: fillColor = 'white'
+15.7448 	EXP 	trueButton: fillColor = 'white'
+15.7448 	EXP 	falseButton: fillColor = 'white'
+15.7616 	EXP 	trueButton: fillColor = 'white'
+15.7616 	EXP 	falseButton: fillColor = 'white'
+15.7784 	EXP 	trueButton: fillColor = 'white'
+15.7784 	EXP 	falseButton: fillColor = 'white'
+15.7949 	EXP 	trueButton: fillColor = 'white'
+15.7949 	EXP 	falseButton: fillColor = 'white'
+15.8111 	EXP 	trueButton: fillColor = 'white'
+15.8111 	EXP 	falseButton: fillColor = 'white'
+15.8281 	EXP 	trueButton: fillColor = 'white'
+15.8281 	EXP 	falseButton: fillColor = 'white'
+15.8444 	EXP 	trueButton: fillColor = 'white'
+15.8444 	EXP 	falseButton: fillColor = 'white'
+15.8616 	EXP 	trueButton: fillColor = 'white'
+15.8616 	EXP 	falseButton: fillColor = 'white'
+15.8777 	EXP 	trueButton: fillColor = 'white'
+15.8777 	EXP 	falseButton: fillColor = 'white'
+15.8938 	EXP 	trueButton: fillColor = 'white'
+15.8938 	EXP 	falseButton: fillColor = 'white'
+15.9110 	EXP 	trueButton: fillColor = 'white'
+15.9110 	EXP 	falseButton: fillColor = 'white'
+15.9278 	EXP 	trueButton: fillColor = 'white'
+15.9278 	EXP 	falseButton: fillColor = 'white'
+15.9443 	EXP 	trueButton: fillColor = 'white'
+15.9443 	EXP 	falseButton: fillColor = 'white'
+15.9616 	EXP 	trueButton: fillColor = 'white'
+15.9616 	EXP 	falseButton: fillColor = 'white'
+15.9629 	DATA 	Mouse: Left button down, pos=(563,263)
+15.9784 	EXP 	trueButton: fillColor = 'white'
+15.9784 	EXP 	falseButton: fillColor = 'white'
+15.9784 	EXP 	senseText: autoDraw = False
+15.9784 	EXP 	trueButton: autoDraw = False
+15.9784 	EXP 	trueText: autoDraw = False
+15.9784 	EXP 	falseButton: autoDraw = False
+15.9784 	EXP 	falseText: autoDraw = False
+15.9784 	EXP 	sentenceFeedback2: text = 'Correct!'
+15.9784 	EXP 	sentenceFeedback2: autoDraw = True
+16.0636 	DATA 	Mouse:  Left button up, pos=(563,263)
+16.9629 	EXP 	New trial (rep=0, index=2): OrderedDict([('ID', 3), ('sentence', 'People in our town are more giving and cheerful at Christmas time.\xa0'), ('CorrectResp', 'correct')])
+16.9945 	EXP 	sentenceFeedback2: autoDraw = False
+16.9945 	EXP 	sentenceFeedback2: autoDraw = False
+16.9945 	EXP 	sentenceFeedback2: text = 'Correct!'
+16.9945 	EXP 	sentenceText: text = 'People in our town are more giving and cheerful at Christmas time.\xa0'
+16.9945 	EXP 	sentenceText: autoDraw = True
+16.9945 	EXP 	continue_12: autoDraw = True
+17.5134 	DATA 	Mouse: Left button down, pos=(631,272)
+17.5319 	EXP 	sentenceText: autoDraw = False
+17.5319 	EXP 	continue_12: autoDraw = False
+17.5319 	EXP 	trueButton: fillColor = 'white'
+17.5319 	EXP 	falseButton: fillColor = 'white'
+17.5319 	EXP 	trueButton: fillColor = 'white (named)'
+17.5319 	EXP 	falseButton: fillColor = 'white (named)'
+17.5319 	EXP 	trueButton: fillColor = 'white'
+17.5319 	EXP 	falseButton: fillColor = 'white'
+17.5319 	EXP 	senseText: autoDraw = True
+17.5319 	EXP 	trueButton: autoDraw = True
+17.5319 	EXP 	trueText: autoDraw = True
+17.5319 	EXP 	falseButton: autoDraw = True
+17.5319 	EXP 	falseText: autoDraw = True
+17.5615 	EXP 	trueButton: fillColor = 'white'
+17.5615 	EXP 	falseButton: fillColor = 'white'
+17.5781 	EXP 	trueButton: fillColor = 'white'
+17.5781 	EXP 	falseButton: fillColor = 'white'
+17.5944 	EXP 	trueButton: fillColor = 'white'
+17.5944 	EXP 	falseButton: fillColor = 'white'
+17.5997 	DATA 	Mouse:  Left button up, pos=(631,271)
+17.6110 	EXP 	trueButton: fillColor = 'white'
+17.6110 	EXP 	falseButton: fillColor = 'white'
+17.6282 	EXP 	trueButton: fillColor = 'white'
+17.6282 	EXP 	falseButton: fillColor = 'white'
+17.6449 	EXP 	trueButton: fillColor = 'white'
+17.6449 	EXP 	falseButton: fillColor = 'white'
+17.6618 	EXP 	trueButton: fillColor = 'white'
+17.6618 	EXP 	falseButton: fillColor = 'white'
+17.6782 	EXP 	trueButton: fillColor = 'white'
+17.6782 	EXP 	falseButton: fillColor = 'white'
+17.6947 	EXP 	trueButton: fillColor = 'white'
+17.6947 	EXP 	falseButton: fillColor = 'white'
+17.7114 	EXP 	trueButton: fillColor = 'white'
+17.7114 	EXP 	falseButton: fillColor = 'white'
+17.7279 	EXP 	trueButton: fillColor = 'white'
+17.7279 	EXP 	falseButton: fillColor = 'white'
+17.7449 	EXP 	trueButton: fillColor = 'white'
+17.7449 	EXP 	falseButton: fillColor = 'white'
+17.7616 	EXP 	trueButton: fillColor = 'white'
+17.7616 	EXP 	falseButton: fillColor = 'white'
+17.7779 	EXP 	trueButton: fillColor = 'white'
+17.7779 	EXP 	falseButton: fillColor = 'white'
+17.7948 	EXP 	trueButton: fillColor = 'white'
+17.7948 	EXP 	falseButton: fillColor = 'white'
+17.8112 	EXP 	trueButton: fillColor = 'white'
+17.8112 	EXP 	falseButton: fillColor = 'white'
+17.8272 	EXP 	trueButton: fillColor = 'white'
+17.8272 	EXP 	falseButton: fillColor = 'white'
+17.8446 	EXP 	trueButton: fillColor = 'white'
+17.8446 	EXP 	falseButton: fillColor = 'white'
+17.8615 	EXP 	trueButton: fillColor = 'white'
+17.8615 	EXP 	falseButton: fillColor = 'white'
+17.8783 	EXP 	trueButton: fillColor = 'white'
+17.8783 	EXP 	falseButton: fillColor = 'white'
+17.8951 	EXP 	trueButton: fillColor = 'white'
+17.8951 	EXP 	falseButton: fillColor = 'white'
+17.9105 	EXP 	trueButton: fillColor = 'white'
+17.9105 	EXP 	falseButton: fillColor = 'white'
+17.9282 	EXP 	trueButton: fillColor = 'white'
+17.9282 	EXP 	falseButton: fillColor = 'white'
+17.9452 	EXP 	trueButton: fillColor = 'white'
+17.9452 	EXP 	falseButton: fillColor = 'white'
+17.9606 	EXP 	trueButton: fillColor = 'white'
+17.9606 	EXP 	falseButton: fillColor = 'white'
+17.9773 	EXP 	trueButton: fillColor = 'white'
+17.9773 	EXP 	falseButton: fillColor = 'white'
+17.9940 	EXP 	trueButton: fillColor = 'white'
+17.9940 	EXP 	falseButton: fillColor = 'white'
+18.0115 	EXP 	trueButton: fillColor = 'white'
+18.0115 	EXP 	falseButton: fillColor = 'white'
+18.0275 	EXP 	trueButton: fillColor = 'white'
+18.0275 	EXP 	falseButton: fillColor = 'white'
+18.0441 	EXP 	trueButton: fillColor = 'white'
+18.0441 	EXP 	falseButton: fillColor = 'white'
+18.0615 	EXP 	trueButton: fillColor = 'white'
+18.0615 	EXP 	falseButton: fillColor = 'white'
+18.0774 	EXP 	trueButton: fillColor = 'white'
+18.0774 	EXP 	falseButton: fillColor = 'white'
+18.0948 	EXP 	trueButton: fillColor = 'white'
+18.0948 	EXP 	falseButton: fillColor = 'white'
+18.1119 	EXP 	trueButton: fillColor = 'white'
+18.1119 	EXP 	falseButton: fillColor = 'white'
+18.1285 	EXP 	trueButton: fillColor = 'white'
+18.1285 	EXP 	falseButton: fillColor = 'white'
+18.1452 	EXP 	trueButton: fillColor = 'white'
+18.1452 	EXP 	falseButton: fillColor = 'white'
+18.1619 	EXP 	trueButton: fillColor = 'white'
+18.1619 	EXP 	falseButton: fillColor = 'white'
+18.1776 	EXP 	trueButton: fillColor = 'white'
+18.1776 	EXP 	falseButton: fillColor = 'white'
+18.1949 	EXP 	trueButton: fillColor = 'white'
+18.1949 	EXP 	falseButton: fillColor = 'white'
+18.2105 	EXP 	trueButton: fillColor = 'white'
+18.2105 	EXP 	falseButton: fillColor = 'white'
+18.2283 	EXP 	trueButton: fillColor = 'white'
+18.2283 	EXP 	falseButton: fillColor = 'white'
+18.2297 	DATA 	Mouse: Left button down, pos=(889,256)
+18.2463 	EXP 	trueButton: fillColor = 'green'
+18.2463 	EXP 	senseText: autoDraw = False
+18.2463 	EXP 	trueButton: autoDraw = False
+18.2463 	EXP 	trueText: autoDraw = False
+18.2463 	EXP 	falseButton: autoDraw = False
+18.2463 	EXP 	falseText: autoDraw = False
+18.2463 	EXP 	sentenceFeedback2: text = 'Correct!'
+18.2463 	EXP 	sentenceFeedback2: autoDraw = True
+18.3308 	DATA 	Mouse:  Left button up, pos=(890,256)
+19.2463 	EXP 	New trial (rep=0, index=3): OrderedDict([('ID', 4), ('sentence', 'During the week of final spaghetti, I felt like I was losing my mind.'), ('CorrectResp', 'incorrect')])
+19.2785 	EXP 	sentenceFeedback2: autoDraw = False
+19.2785 	EXP 	sentenceFeedback2: text = 'Correct!'
+19.2785 	EXP 	sentenceText: text = 'During the week of final spaghetti, I felt like I was losing my mind.'
+19.2785 	EXP 	sentenceText: autoDraw = True
+19.2785 	EXP 	continue_12: autoDraw = True
+19.6966 	DATA 	Mouse: Left button down, pos=(823,277)
+19.7131 	EXP 	sentenceText: autoDraw = False
+19.7131 	EXP 	continue_12: autoDraw = False
+19.7131 	EXP 	trueButton: fillColor = 'white'
+19.7131 	EXP 	falseButton: fillColor = 'white'
+19.7131 	EXP 	trueButton: fillColor = 'white (named)'
+19.7131 	EXP 	falseButton: fillColor = 'white (named)'
+19.7131 	EXP 	trueButton: fillColor = 'white'
+19.7131 	EXP 	falseButton: fillColor = 'white'
+19.7131 	EXP 	senseText: autoDraw = True
+19.7131 	EXP 	trueButton: autoDraw = True
+19.7131 	EXP 	trueText: autoDraw = True
+19.7131 	EXP 	falseButton: autoDraw = True
+19.7131 	EXP 	falseText: autoDraw = True
+19.7284 	EXP 	trueButton: fillColor = 'white'
+19.7284 	EXP 	falseButton: fillColor = 'white'
+19.7453 	EXP 	trueButton: fillColor = 'white'
+19.7453 	EXP 	falseButton: fillColor = 'white'
+19.7603 	EXP 	trueButton: fillColor = 'white'
+19.7603 	EXP 	falseButton: fillColor = 'white'
+19.7780 	EXP 	trueButton: fillColor = 'white'
+19.7780 	EXP 	falseButton: fillColor = 'white'
+19.7793 	DATA 	Mouse:  Left button up, pos=(823,277)
+19.7941 	EXP 	trueButton: fillColor = 'white'
+19.7941 	EXP 	falseButton: fillColor = 'white'
+19.8110 	EXP 	trueButton: fillColor = 'white'
+19.8110 	EXP 	falseButton: fillColor = 'white'
+19.8273 	EXP 	trueButton: fillColor = 'white'
+19.8273 	EXP 	falseButton: fillColor = 'white'
+19.8450 	EXP 	trueButton: fillColor = 'white'
+19.8450 	EXP 	falseButton: fillColor = 'white'
+19.8609 	EXP 	trueButton: fillColor = 'white'
+19.8609 	EXP 	falseButton: fillColor = 'white'
+19.8773 	EXP 	trueButton: fillColor = 'white'
+19.8773 	EXP 	falseButton: fillColor = 'white'
+19.8948 	EXP 	trueButton: fillColor = 'white'
+19.8948 	EXP 	falseButton: fillColor = 'white'
+19.9113 	EXP 	trueButton: fillColor = 'white'
+19.9113 	EXP 	falseButton: fillColor = 'white'
+19.9277 	EXP 	trueButton: fillColor = 'white'
+19.9277 	EXP 	falseButton: fillColor = 'white'
+19.9443 	EXP 	trueButton: fillColor = 'white'
+19.9443 	EXP 	falseButton: fillColor = 'white'
+19.9609 	EXP 	trueButton: fillColor = 'white'
+19.9609 	EXP 	falseButton: fillColor = 'white'
+19.9782 	EXP 	trueButton: fillColor = 'white'
+19.9782 	EXP 	falseButton: fillColor = 'white'
+19.9939 	EXP 	trueButton: fillColor = 'white'
+19.9939 	EXP 	falseButton: fillColor = 'white'
+20.0115 	EXP 	trueButton: fillColor = 'white'
+20.0115 	EXP 	falseButton: fillColor = 'white'
+20.0278 	EXP 	trueButton: fillColor = 'white'
+20.0278 	EXP 	falseButton: fillColor = 'white'
+20.0447 	EXP 	trueButton: fillColor = 'white'
+20.0447 	EXP 	falseButton: fillColor = 'white'
+20.0613 	EXP 	trueButton: fillColor = 'white'
+20.0613 	EXP 	falseButton: fillColor = 'white'
+20.0784 	EXP 	trueButton: fillColor = 'white'
+20.0784 	EXP 	falseButton: fillColor = 'white'
+20.0944 	EXP 	trueButton: fillColor = 'white'
+20.0944 	EXP 	falseButton: fillColor = 'white'
+20.1108 	EXP 	trueButton: fillColor = 'white'
+20.1108 	EXP 	falseButton: fillColor = 'white'
+20.1280 	EXP 	trueButton: fillColor = 'white'
+20.1280 	EXP 	falseButton: fillColor = 'white'
+20.1446 	EXP 	trueButton: fillColor = 'white'
+20.1446 	EXP 	falseButton: fillColor = 'white'
+20.1612 	EXP 	trueButton: fillColor = 'white'
+20.1612 	EXP 	falseButton: fillColor = 'white'
+20.1783 	EXP 	trueButton: fillColor = 'white'
+20.1783 	EXP 	falseButton: fillColor = 'white'
+20.1949 	EXP 	trueButton: fillColor = 'white'
+20.1949 	EXP 	falseButton: fillColor = 'white'
+20.2115 	EXP 	trueButton: fillColor = 'white'
+20.2115 	EXP 	falseButton: fillColor = 'white'
+20.2288 	EXP 	trueButton: fillColor = 'white'
+20.2288 	EXP 	falseButton: fillColor = 'white'
+20.2448 	EXP 	trueButton: fillColor = 'white'
+20.2448 	EXP 	falseButton: fillColor = 'white'
+20.2614 	EXP 	trueButton: fillColor = 'white'
+20.2614 	EXP 	falseButton: fillColor = 'white'
+20.2778 	EXP 	trueButton: fillColor = 'white'
+20.2778 	EXP 	falseButton: fillColor = 'white'
+20.2936 	EXP 	trueButton: fillColor = 'white'
+20.2936 	EXP 	falseButton: fillColor = 'white'
+20.3107 	EXP 	trueButton: fillColor = 'white'
+20.3107 	EXP 	falseButton: fillColor = 'white'
+20.3274 	EXP 	trueButton: fillColor = 'white'
+20.3274 	EXP 	falseButton: fillColor = 'white'
+20.3448 	EXP 	trueButton: fillColor = 'white'
+20.3448 	EXP 	falseButton: fillColor = 'white'
+20.3607 	EXP 	trueButton: fillColor = 'white'
+20.3607 	EXP 	falseButton: fillColor = 'white'
+20.3783 	EXP 	trueButton: fillColor = 'white'
+20.3783 	EXP 	falseButton: fillColor = 'white'
+20.3948 	EXP 	trueButton: fillColor = 'white'
+20.3948 	EXP 	falseButton: fillColor = 'white'
+20.4110 	EXP 	trueButton: fillColor = 'white'
+20.4110 	EXP 	falseButton: fillColor = 'white'
+20.4280 	EXP 	trueButton: fillColor = 'white'
+20.4280 	EXP 	falseButton: fillColor = 'white'
+20.4444 	EXP 	trueButton: fillColor = 'white'
+20.4444 	EXP 	falseButton: fillColor = 'white'
+20.4612 	EXP 	trueButton: fillColor = 'white'
+20.4612 	EXP 	falseButton: fillColor = 'white'
+20.4784 	EXP 	trueButton: fillColor = 'white'
+20.4784 	EXP 	falseButton: fillColor = 'white'
+20.4950 	EXP 	trueButton: fillColor = 'white'
+20.4950 	EXP 	falseButton: fillColor = 'white'
+20.5106 	EXP 	trueButton: fillColor = 'white'
+20.5106 	EXP 	falseButton: fillColor = 'white'
+20.5275 	EXP 	trueButton: fillColor = 'white'
+20.5275 	EXP 	falseButton: fillColor = 'white'
+20.5446 	EXP 	trueButton: fillColor = 'white'
+20.5446 	EXP 	falseButton: fillColor = 'white'
+20.5612 	EXP 	trueButton: fillColor = 'white'
+20.5612 	EXP 	falseButton: fillColor = 'white'
+20.5781 	EXP 	trueButton: fillColor = 'white'
+20.5781 	EXP 	falseButton: fillColor = 'white'
+20.5942 	EXP 	trueButton: fillColor = 'white'
+20.5942 	EXP 	falseButton: fillColor = 'white'
+20.6117 	EXP 	trueButton: fillColor = 'white'
+20.6117 	EXP 	falseButton: fillColor = 'white'
+20.6135 	DATA 	Mouse: Left button down, pos=(855,280)
+20.6298 	EXP 	trueButton: fillColor = 'green'
+20.6298 	EXP 	senseText: autoDraw = False
+20.6298 	EXP 	trueButton: autoDraw = False
+20.6298 	EXP 	trueText: autoDraw = False
+20.6298 	EXP 	falseButton: autoDraw = False
+20.6298 	EXP 	falseText: autoDraw = False
+20.6298 	EXP 	sentenceFeedback2: text = ''
+20.6298 	EXP 	sentenceFeedback2: autoDraw = True
+20.7144 	DATA 	Mouse:  Left button up, pos=(856,280)
+21.6295 	EXP 	New trial (rep=0, index=4): OrderedDict([('ID', 5), ('sentence', "After final exams are over, we'll be able to take a well-deserved rest.\xa0"), ('CorrectResp', 'correct')])
+21.6610 	EXP 	sentenceFeedback2: autoDraw = False
+21.6610 	EXP 	sentenceText: text = "After final exams are over, we'll be able to take a well-deserved rest.\xa0"
+21.6610 	EXP 	sentenceText: autoDraw = True
+21.6610 	EXP 	continue_12: autoDraw = True
+23.0636 	DATA 	Mouse: Left button down, pos=(856,281)
+23.0801 	EXP 	sentenceText: autoDraw = False
+23.0801 	EXP 	continue_12: autoDraw = False
+23.0801 	EXP 	trueButton: fillColor = 'white'
+23.0801 	EXP 	falseButton: fillColor = 'white'
+23.0801 	EXP 	trueButton: fillColor = 'white (named)'
+23.0801 	EXP 	falseButton: fillColor = 'white (named)'
+23.0801 	EXP 	trueButton: fillColor = 'green'
+23.0801 	EXP 	senseText: autoDraw = True
+23.0801 	EXP 	trueButton: autoDraw = True
+23.0801 	EXP 	trueText: autoDraw = True
+23.0801 	EXP 	falseButton: autoDraw = True
+23.0801 	EXP 	falseText: autoDraw = True
+23.0949 	EXP 	trueButton: fillColor = 'white'
+23.0949 	EXP 	falseButton: fillColor = 'white'
+23.1107 	EXP 	trueButton: fillColor = 'white'
+23.1107 	EXP 	falseButton: fillColor = 'white'
+23.1281 	EXP 	trueButton: fillColor = 'white'
+23.1281 	EXP 	falseButton: fillColor = 'white'
+23.1443 	EXP 	trueButton: fillColor = 'white'
+23.1443 	EXP 	falseButton: fillColor = 'white'
+23.1613 	EXP 	trueButton: fillColor = 'white'
+23.1613 	EXP 	falseButton: fillColor = 'white'
+23.1774 	EXP 	trueButton: fillColor = 'white'
+23.1774 	EXP 	falseButton: fillColor = 'white'
+23.1946 	EXP 	trueButton: fillColor = 'white'
+23.1946 	EXP 	falseButton: fillColor = 'white'
+23.2013 	DATA 	Mouse:  Left button up, pos=(856,281)
+23.2120 	EXP 	trueButton: fillColor = 'white'
+23.2120 	EXP 	falseButton: fillColor = 'white'
+23.2279 	EXP 	trueButton: fillColor = 'white'
+23.2279 	EXP 	falseButton: fillColor = 'white'
+23.2443 	EXP 	trueButton: fillColor = 'white'
+23.2443 	EXP 	falseButton: fillColor = 'white'
+23.2615 	EXP 	trueButton: fillColor = 'white'
+23.2615 	EXP 	falseButton: fillColor = 'white'
+23.2781 	EXP 	trueButton: fillColor = 'white'
+23.2781 	EXP 	falseButton: fillColor = 'white'
+23.2948 	EXP 	trueButton: fillColor = 'white'
+23.2948 	EXP 	falseButton: fillColor = 'white'
+23.3110 	EXP 	trueButton: fillColor = 'white'
+23.3110 	EXP 	falseButton: fillColor = 'white'
+23.3273 	EXP 	trueButton: fillColor = 'white'
+23.3273 	EXP 	falseButton: fillColor = 'white'
+23.3449 	EXP 	trueButton: fillColor = 'white'
+23.3449 	EXP 	falseButton: fillColor = 'white'
+23.3614 	EXP 	trueButton: fillColor = 'white'
+23.3614 	EXP 	falseButton: fillColor = 'white'
+23.3780 	EXP 	trueButton: fillColor = 'white'
+23.3780 	EXP 	falseButton: fillColor = 'white'
+23.3945 	EXP 	trueButton: fillColor = 'white'
+23.3945 	EXP 	falseButton: fillColor = 'white'
+23.4107 	EXP 	trueButton: fillColor = 'white'
+23.4107 	EXP 	falseButton: fillColor = 'white'
+23.4278 	EXP 	trueButton: fillColor = 'white'
+23.4278 	EXP 	falseButton: fillColor = 'white'
+23.4446 	EXP 	trueButton: fillColor = 'white'
+23.4446 	EXP 	falseButton: fillColor = 'white'
+23.4616 	EXP 	trueButton: fillColor = 'white'
+23.4616 	EXP 	falseButton: fillColor = 'white'
+23.4784 	EXP 	trueButton: fillColor = 'white'
+23.4784 	EXP 	falseButton: fillColor = 'white'
+23.4949 	EXP 	trueButton: fillColor = 'white'
+23.4949 	EXP 	falseButton: fillColor = 'white'
+23.5103 	EXP 	trueButton: fillColor = 'white'
+23.5103 	EXP 	falseButton: fillColor = 'white'
+23.5283 	EXP 	trueButton: fillColor = 'white'
+23.5283 	EXP 	falseButton: fillColor = 'white'
+23.5440 	EXP 	trueButton: fillColor = 'white'
+23.5440 	EXP 	falseButton: fillColor = 'white'
+23.5611 	EXP 	trueButton: fillColor = 'white'
+23.5611 	EXP 	falseButton: fillColor = 'white'
+23.5775 	EXP 	trueButton: fillColor = 'white'
+23.5775 	EXP 	falseButton: fillColor = 'white'
+23.5941 	EXP 	trueButton: fillColor = 'white'
+23.5941 	EXP 	falseButton: fillColor = 'white'
+23.6115 	EXP 	trueButton: fillColor = 'white'
+23.6115 	EXP 	falseButton: fillColor = 'white'
+23.6279 	EXP 	trueButton: fillColor = 'white'
+23.6279 	EXP 	falseButton: fillColor = 'white'
+23.6293 	DATA 	Mouse: Left button down, pos=(914,275)
+23.6452 	EXP 	trueButton: fillColor = 'white'
+23.6452 	EXP 	falseButton: fillColor = 'white'
+23.6452 	EXP 	senseText: autoDraw = False
+23.6452 	EXP 	trueButton: autoDraw = False
+23.6452 	EXP 	trueText: autoDraw = False
+23.6452 	EXP 	falseButton: autoDraw = False
+23.6452 	EXP 	falseText: autoDraw = False
+23.6452 	EXP 	sentenceFeedback2: text = ''
+23.6452 	EXP 	sentenceFeedback2: autoDraw = True
+23.7461 	DATA 	Mouse:  Left button up, pos=(914,275)
+24.6298 	EXP 	New trial (rep=0, index=5): OrderedDict([('ID', 6), ('sentence', 'After a hard day at the office, Bill often stops at the club to relax.\xa0'), ('CorrectResp', 'correct')])
+24.6616 	EXP 	sentenceFeedback2: autoDraw = False
+24.6616 	EXP 	sentenceFeedback2: autoDraw = False
+24.6616 	EXP 	sentenceText: text = 'After a hard day at the office, Bill often stops at the club to relax.\xa0'
+24.6616 	EXP 	sentenceText: autoDraw = True
+24.6616 	EXP 	continue_12: autoDraw = True
+25.3961 	DATA 	Mouse: Left button down, pos=(914,274)
+25.4148 	EXP 	sentenceText: autoDraw = False
+25.4148 	EXP 	continue_12: autoDraw = False
+25.4148 	EXP 	trueButton: fillColor = 'white'
+25.4148 	EXP 	falseButton: fillColor = 'white'
+25.4148 	EXP 	trueButton: fillColor = 'white (named)'
+25.4148 	EXP 	falseButton: fillColor = 'white (named)'
+25.4148 	EXP 	trueButton: fillColor = 'green'
+25.4148 	EXP 	senseText: autoDraw = True
+25.4148 	EXP 	trueButton: autoDraw = True
+25.4148 	EXP 	trueText: autoDraw = True
+25.4148 	EXP 	falseButton: autoDraw = True
+25.4148 	EXP 	falseText: autoDraw = True
+25.4288 	EXP 	trueButton: fillColor = 'white'
+25.4288 	EXP 	falseButton: fillColor = 'white'
+25.4444 	EXP 	trueButton: fillColor = 'white'
+25.4444 	EXP 	falseButton: fillColor = 'white'
+25.4617 	EXP 	trueButton: fillColor = 'white'
+25.4617 	EXP 	falseButton: fillColor = 'white'
+25.4780 	EXP 	trueButton: fillColor = 'white'
+25.4780 	EXP 	falseButton: fillColor = 'white'
+25.4948 	EXP 	trueButton: fillColor = 'white'
+25.4948 	EXP 	falseButton: fillColor = 'white'
+25.5115 	EXP 	trueButton: fillColor = 'white'
+25.5115 	EXP 	falseButton: fillColor = 'white'
+25.5132 	DATA 	Mouse:  Left button up, pos=(914,274)
+25.5282 	EXP 	trueButton: fillColor = 'white'
+25.5282 	EXP 	falseButton: fillColor = 'white'
+25.5447 	EXP 	trueButton: fillColor = 'white'
+25.5447 	EXP 	falseButton: fillColor = 'white'
+25.5615 	EXP 	trueButton: fillColor = 'white'
+25.5615 	EXP 	falseButton: fillColor = 'white'
+25.5781 	EXP 	trueButton: fillColor = 'white'
+25.5781 	EXP 	falseButton: fillColor = 'white'
+25.5947 	EXP 	trueButton: fillColor = 'white'
+25.5947 	EXP 	falseButton: fillColor = 'white'
+25.6112 	EXP 	trueButton: fillColor = 'white'
+25.6112 	EXP 	falseButton: fillColor = 'white'
+25.6281 	EXP 	trueButton: fillColor = 'white'
+25.6281 	EXP 	falseButton: fillColor = 'white'
+25.6446 	EXP 	trueButton: fillColor = 'white'
+25.6446 	EXP 	falseButton: fillColor = 'white'
+25.6613 	EXP 	trueButton: fillColor = 'white'
+25.6613 	EXP 	falseButton: fillColor = 'white'
+25.6774 	EXP 	trueButton: fillColor = 'white'
+25.6774 	EXP 	falseButton: fillColor = 'white'
+25.6944 	EXP 	trueButton: fillColor = 'white'
+25.6944 	EXP 	falseButton: fillColor = 'white'
+25.7110 	EXP 	trueButton: fillColor = 'white'
+25.7110 	EXP 	falseButton: fillColor = 'white'
+25.7280 	EXP 	trueButton: fillColor = 'white'
+25.7280 	EXP 	falseButton: fillColor = 'white'
+25.7442 	EXP 	trueButton: fillColor = 'white'
+25.7442 	EXP 	falseButton: fillColor = 'white'
+25.7614 	EXP 	trueButton: fillColor = 'white'
+25.7614 	EXP 	falseButton: fillColor = 'white'
+25.7781 	EXP 	trueButton: fillColor = 'white'
+25.7781 	EXP 	falseButton: fillColor = 'white'
+25.7947 	EXP 	trueButton: fillColor = 'white'
+25.7947 	EXP 	falseButton: fillColor = 'white'
+25.8114 	EXP 	trueButton: fillColor = 'white'
+25.8114 	EXP 	falseButton: fillColor = 'white'
+25.8281 	EXP 	trueButton: fillColor = 'white'
+25.8281 	EXP 	falseButton: fillColor = 'white'
+25.8447 	EXP 	trueButton: fillColor = 'white'
+25.8447 	EXP 	falseButton: fillColor = 'white'
+25.8612 	EXP 	trueButton: fillColor = 'white'
+25.8612 	EXP 	falseButton: fillColor = 'white'
+25.8777 	EXP 	trueButton: fillColor = 'white'
+25.8777 	EXP 	falseButton: fillColor = 'white'
+25.8943 	EXP 	trueButton: fillColor = 'white'
+25.8943 	EXP 	falseButton: fillColor = 'white'
+25.9105 	EXP 	trueButton: fillColor = 'white'
+25.9105 	EXP 	falseButton: fillColor = 'white'
+25.9278 	EXP 	trueButton: fillColor = 'white'
+25.9278 	EXP 	falseButton: fillColor = 'white'
+25.9293 	DATA 	Mouse: Left button down, pos=(914,274)
+25.9441 	EXP 	trueButton: fillColor = 'white'
+25.9441 	EXP 	falseButton: fillColor = 'white'
+25.9441 	EXP 	senseText: autoDraw = False
+25.9441 	EXP 	trueButton: autoDraw = False
+25.9441 	EXP 	trueText: autoDraw = False
+25.9441 	EXP 	falseButton: autoDraw = False
+25.9441 	EXP 	falseText: autoDraw = False
+25.9441 	EXP 	sentenceFeedback2: text = ''
+25.9441 	EXP 	sentenceFeedback2: autoDraw = True
+26.0630 	DATA 	Mouse:  Left button up, pos=(914,274)
+26.9299 	EXP 	New trial (rep=0, index=6): OrderedDict([('ID', 7), ('sentence', 'No matter how much we talk to him, he is never going to change.'), ('CorrectResp', 'correct')])
+26.9613 	EXP 	sentenceFeedback2: autoDraw = False
+26.9613 	EXP 	sentenceFeedback2: autoDraw = False
+26.9613 	EXP 	sentenceText: text = 'No matter how much we talk to him, he is never going to change.'
+26.9613 	EXP 	sentenceText: autoDraw = True
+26.9613 	EXP 	continue_12: autoDraw = True
+27.3628 	DATA 	Mouse: Left button down, pos=(914,274)
+27.3818 	EXP 	sentenceText: autoDraw = False
+27.3818 	EXP 	continue_12: autoDraw = False
+27.3818 	EXP 	trueButton: fillColor = 'white'
+27.3818 	EXP 	falseButton: fillColor = 'white'
+27.3818 	EXP 	trueButton: fillColor = 'white (named)'
+27.3818 	EXP 	falseButton: fillColor = 'white (named)'
+27.3818 	EXP 	trueButton: fillColor = 'green'
+27.3818 	EXP 	senseText: autoDraw = True
+27.3818 	EXP 	trueButton: autoDraw = True
+27.3818 	EXP 	trueText: autoDraw = True
+27.3818 	EXP 	falseButton: autoDraw = True
+27.3818 	EXP 	falseText: autoDraw = True
+27.4112 	EXP 	trueButton: fillColor = 'white'
+27.4112 	EXP 	falseButton: fillColor = 'white'
+27.4282 	EXP 	trueButton: fillColor = 'white'
+27.4282 	EXP 	falseButton: fillColor = 'white'
+27.4440 	EXP 	trueButton: fillColor = 'white'
+27.4440 	EXP 	falseButton: fillColor = 'white'
+27.4615 	EXP 	trueButton: fillColor = 'white'
+27.4615 	EXP 	falseButton: fillColor = 'white'
+27.4635 	DATA 	Mouse:  Left button up, pos=(914,274)
+27.4785 	EXP 	trueButton: fillColor = 'white'
+27.4785 	EXP 	falseButton: fillColor = 'white'
+27.4947 	EXP 	trueButton: fillColor = 'white'
+27.4947 	EXP 	falseButton: fillColor = 'white'
+27.5111 	EXP 	trueButton: fillColor = 'white'
+27.5111 	EXP 	falseButton: fillColor = 'white'
+27.5277 	EXP 	trueButton: fillColor = 'white'
+27.5277 	EXP 	falseButton: fillColor = 'white'
+27.5440 	EXP 	trueButton: fillColor = 'white'
+27.5440 	EXP 	falseButton: fillColor = 'white'
+27.5617 	EXP 	trueButton: fillColor = 'white'
+27.5617 	EXP 	falseButton: fillColor = 'white'
+27.5774 	EXP 	trueButton: fillColor = 'white'
+27.5774 	EXP 	falseButton: fillColor = 'white'
+27.5940 	EXP 	trueButton: fillColor = 'white'
+27.5940 	EXP 	falseButton: fillColor = 'white'
+27.6111 	EXP 	trueButton: fillColor = 'white'
+27.6111 	EXP 	falseButton: fillColor = 'white'
+27.6279 	EXP 	trueButton: fillColor = 'white'
+27.6279 	EXP 	falseButton: fillColor = 'white'
+27.6449 	EXP 	trueButton: fillColor = 'white'
+27.6449 	EXP 	falseButton: fillColor = 'white'
+27.6616 	EXP 	trueButton: fillColor = 'white'
+27.6616 	EXP 	falseButton: fillColor = 'white'
+27.6782 	EXP 	trueButton: fillColor = 'white'
+27.6782 	EXP 	falseButton: fillColor = 'white'
+27.6947 	EXP 	trueButton: fillColor = 'white'
+27.6947 	EXP 	falseButton: fillColor = 'white'
+27.7114 	EXP 	trueButton: fillColor = 'white'
+27.7114 	EXP 	falseButton: fillColor = 'white'
+27.7278 	EXP 	trueButton: fillColor = 'white'
+27.7278 	EXP 	falseButton: fillColor = 'white'
+27.7450 	EXP 	trueButton: fillColor = 'white'
+27.7450 	EXP 	falseButton: fillColor = 'white'
+27.7613 	EXP 	trueButton: fillColor = 'white'
+27.7613 	EXP 	falseButton: fillColor = 'white'
+27.7777 	EXP 	trueButton: fillColor = 'white'
+27.7777 	EXP 	falseButton: fillColor = 'white'
+27.7941 	EXP 	trueButton: fillColor = 'white'
+27.7941 	EXP 	falseButton: fillColor = 'white'
+27.8109 	EXP 	trueButton: fillColor = 'white'
+27.8109 	EXP 	falseButton: fillColor = 'white'
+27.8276 	EXP 	trueButton: fillColor = 'white'
+27.8276 	EXP 	falseButton: fillColor = 'white'
+27.8442 	EXP 	trueButton: fillColor = 'white'
+27.8442 	EXP 	falseButton: fillColor = 'white'
+27.8614 	EXP 	trueButton: fillColor = 'white'
+27.8614 	EXP 	falseButton: fillColor = 'white'
+27.8780 	EXP 	trueButton: fillColor = 'white'
+27.8780 	EXP 	falseButton: fillColor = 'white'
+27.8947 	EXP 	trueButton: fillColor = 'white'
+27.8947 	EXP 	falseButton: fillColor = 'white'
+27.9114 	EXP 	trueButton: fillColor = 'white'
+27.9114 	EXP 	falseButton: fillColor = 'white'
+27.9281 	EXP 	trueButton: fillColor = 'white'
+27.9281 	EXP 	falseButton: fillColor = 'white'
+27.9448 	EXP 	trueButton: fillColor = 'white'
+27.9448 	EXP 	falseButton: fillColor = 'white'
+27.9612 	EXP 	trueButton: fillColor = 'white'
+27.9612 	EXP 	falseButton: fillColor = 'white'
+27.9782 	EXP 	trueButton: fillColor = 'white'
+27.9782 	EXP 	falseButton: fillColor = 'white'
+27.9947 	EXP 	trueButton: fillColor = 'white'
+27.9947 	EXP 	falseButton: fillColor = 'white'
+28.0112 	EXP 	trueButton: fillColor = 'white'
+28.0112 	EXP 	falseButton: fillColor = 'white'
+28.0279 	EXP 	trueButton: fillColor = 'white'
+28.0279 	EXP 	falseButton: fillColor = 'white'
+28.0444 	EXP 	trueButton: fillColor = 'white'
+28.0444 	EXP 	falseButton: fillColor = 'white'
+28.0610 	EXP 	trueButton: fillColor = 'white'
+28.0610 	EXP 	falseButton: fillColor = 'white'
+28.0776 	EXP 	trueButton: fillColor = 'white'
+28.0776 	EXP 	falseButton: fillColor = 'white'
+28.0947 	EXP 	trueButton: fillColor = 'white'
+28.0947 	EXP 	falseButton: fillColor = 'white'
+28.1114 	EXP 	trueButton: fillColor = 'white'
+28.1114 	EXP 	falseButton: fillColor = 'white'
+28.1280 	EXP 	trueButton: fillColor = 'white'
+28.1280 	EXP 	falseButton: fillColor = 'white'
+28.1447 	EXP 	trueButton: fillColor = 'white'
+28.1447 	EXP 	falseButton: fillColor = 'white'
+28.1614 	EXP 	trueButton: fillColor = 'white'
+28.1614 	EXP 	falseButton: fillColor = 'white'
+28.1780 	EXP 	trueButton: fillColor = 'white'
+28.1780 	EXP 	falseButton: fillColor = 'white'
+28.1947 	EXP 	trueButton: fillColor = 'white'
+28.1947 	EXP 	falseButton: fillColor = 'white'
+28.2113 	EXP 	trueButton: fillColor = 'white'
+28.2113 	EXP 	falseButton: fillColor = 'white'
+28.2281 	EXP 	trueButton: fillColor = 'white'
+28.2281 	EXP 	falseButton: fillColor = 'white'
+28.2449 	EXP 	trueButton: fillColor = 'white'
+28.2449 	EXP 	falseButton: fillColor = 'white'
+28.2613 	EXP 	trueButton: fillColor = 'white'
+28.2613 	EXP 	falseButton: fillColor = 'white'
+28.2779 	EXP 	trueButton: fillColor = 'white'
+28.2779 	EXP 	falseButton: fillColor = 'white'
+28.2943 	EXP 	trueButton: fillColor = 'white'
+28.2943 	EXP 	falseButton: fillColor = 'white'
+28.3107 	EXP 	trueButton: fillColor = 'white'
+28.3107 	EXP 	falseButton: fillColor = 'white'
+28.3280 	EXP 	trueButton: fillColor = 'white'
+28.3280 	EXP 	falseButton: fillColor = 'white'
+28.3447 	EXP 	trueButton: fillColor = 'white'
+28.3447 	EXP 	falseButton: fillColor = 'white'
+28.3610 	EXP 	trueButton: fillColor = 'white'
+28.3610 	EXP 	falseButton: fillColor = 'white'
+28.3781 	EXP 	trueButton: fillColor = 'white'
+28.3781 	EXP 	falseButton: fillColor = 'white'
+28.3947 	EXP 	trueButton: fillColor = 'white'
+28.3947 	EXP 	falseButton: fillColor = 'white'
+28.4114 	EXP 	trueButton: fillColor = 'white'
+28.4114 	EXP 	falseButton: fillColor = 'white'
+28.4277 	EXP 	trueButton: fillColor = 'white'
+28.4277 	EXP 	falseButton: fillColor = 'white'
+28.4445 	EXP 	trueButton: fillColor = 'white'
+28.4445 	EXP 	falseButton: fillColor = 'white'
+28.4613 	EXP 	trueButton: fillColor = 'white'
+28.4613 	EXP 	falseButton: fillColor = 'white'
+28.4777 	EXP 	trueButton: fillColor = 'white'
+28.4777 	EXP 	falseButton: fillColor = 'white'
+28.4945 	EXP 	trueButton: fillColor = 'white'
+28.4945 	EXP 	falseButton: fillColor = 'white'
+28.5113 	EXP 	trueButton: fillColor = 'white'
+28.5113 	EXP 	falseButton: fillColor = 'white'
+28.5279 	EXP 	trueButton: fillColor = 'white'
+28.5279 	EXP 	falseButton: fillColor = 'white'
+28.5442 	EXP 	trueButton: fillColor = 'white'
+28.5442 	EXP 	falseButton: fillColor = 'white'
+28.5608 	EXP 	trueButton: fillColor = 'white'
+28.5608 	EXP 	falseButton: fillColor = 'white'
+28.5779 	EXP 	trueButton: fillColor = 'white'
+28.5779 	EXP 	falseButton: fillColor = 'white'
+28.5798 	DATA 	Mouse: Left button down, pos=(914,274)
+28.5960 	EXP 	trueButton: fillColor = 'white'
+28.5960 	EXP 	falseButton: fillColor = 'white'
+28.5960 	EXP 	senseText: autoDraw = False
+28.5960 	EXP 	trueButton: autoDraw = False
+28.5960 	EXP 	trueText: autoDraw = False
+28.5960 	EXP 	falseButton: autoDraw = False
+28.5960 	EXP 	falseText: autoDraw = False
+28.5960 	EXP 	sentenceFeedback2: text = ''
+28.5960 	EXP 	sentenceFeedback2: autoDraw = True
+28.6797 	DATA 	Mouse:  Left button up, pos=(914,274)
+29.5959 	EXP 	New trial (rep=0, index=7): OrderedDict([('ID', 8), ('sentence', "The prosecutor's dish was lost because it was not based on fact.\xa0"), ('CorrectResp', 'incorrect')])
+29.6609 	EXP 	sentenceFeedback2: autoDraw = False
+29.6609 	EXP 	sentenceText: text = "The prosecutor's dish was lost because it was not based on fact.\xa0"
+29.6609 	EXP 	sentenceText: autoDraw = True
+29.6609 	EXP 	continue_12: autoDraw = True
+32.9464 	DATA 	Mouse: Left button down, pos=(904,278)
+32.9627 	EXP 	sentenceText: autoDraw = False
+32.9627 	EXP 	continue_12: autoDraw = False
+32.9627 	EXP 	trueButton: fillColor = 'white'
+32.9627 	EXP 	falseButton: fillColor = 'white'
+32.9627 	EXP 	trueButton: fillColor = 'white (named)'
+32.9627 	EXP 	falseButton: fillColor = 'white (named)'
+32.9627 	EXP 	trueButton: fillColor = 'green'
+32.9627 	EXP 	senseText: autoDraw = True
+32.9627 	EXP 	trueButton: autoDraw = True
+32.9627 	EXP 	trueText: autoDraw = True
+32.9627 	EXP 	falseButton: autoDraw = True
+32.9627 	EXP 	falseText: autoDraw = True
+32.9780 	EXP 	trueButton: fillColor = 'white'
+32.9780 	EXP 	falseButton: fillColor = 'white'
+32.9948 	EXP 	trueButton: fillColor = 'white'
+32.9948 	EXP 	falseButton: fillColor = 'white'
+33.0107 	EXP 	trueButton: fillColor = 'white'
+33.0107 	EXP 	falseButton: fillColor = 'white'
+33.0279 	EXP 	trueButton: fillColor = 'white'
+33.0279 	EXP 	falseButton: fillColor = 'white'
+33.0448 	EXP 	trueButton: fillColor = 'white'
+33.0448 	EXP 	falseButton: fillColor = 'white'
+33.0472 	DATA 	Mouse:  Left button up, pos=(904,278)
+33.0618 	EXP 	trueButton: fillColor = 'white'
+33.0618 	EXP 	falseButton: fillColor = 'white'
+33.0777 	EXP 	trueButton: fillColor = 'white'
+33.0777 	EXP 	falseButton: fillColor = 'white'
+33.0946 	EXP 	trueButton: fillColor = 'white'
+33.0946 	EXP 	falseButton: fillColor = 'white'
+33.1111 	EXP 	trueButton: fillColor = 'white'
+33.1111 	EXP 	falseButton: fillColor = 'white'
+33.1279 	EXP 	trueButton: fillColor = 'white'
+33.1279 	EXP 	falseButton: fillColor = 'white'
+33.1441 	EXP 	trueButton: fillColor = 'white'
+33.1441 	EXP 	falseButton: fillColor = 'white'
+33.1613 	EXP 	trueButton: fillColor = 'white'
+33.1613 	EXP 	falseButton: fillColor = 'white'
+33.1778 	EXP 	trueButton: fillColor = 'white'
+33.1778 	EXP 	falseButton: fillColor = 'white'
+33.1946 	EXP 	trueButton: fillColor = 'white'
+33.1946 	EXP 	falseButton: fillColor = 'white'
+33.2113 	EXP 	trueButton: fillColor = 'white'
+33.2113 	EXP 	falseButton: fillColor = 'white'
+33.2278 	EXP 	trueButton: fillColor = 'white'
+33.2278 	EXP 	falseButton: fillColor = 'white'
+33.2444 	EXP 	trueButton: fillColor = 'white'
+33.2444 	EXP 	falseButton: fillColor = 'white'
+33.2611 	EXP 	trueButton: fillColor = 'white'
+33.2611 	EXP 	falseButton: fillColor = 'white'
+33.2778 	EXP 	trueButton: fillColor = 'white'
+33.2778 	EXP 	falseButton: fillColor = 'white'
+33.2947 	EXP 	trueButton: fillColor = 'white'
+33.2947 	EXP 	falseButton: fillColor = 'white'
+33.3114 	EXP 	trueButton: fillColor = 'white'
+33.3114 	EXP 	falseButton: fillColor = 'white'
+33.3278 	EXP 	trueButton: fillColor = 'white'
+33.3278 	EXP 	falseButton: fillColor = 'white'
+33.3442 	EXP 	trueButton: fillColor = 'white'
+33.3442 	EXP 	falseButton: fillColor = 'white'
+33.3604 	EXP 	trueButton: fillColor = 'white'
+33.3604 	EXP 	falseButton: fillColor = 'white'
+33.3771 	EXP 	trueButton: fillColor = 'white'
+33.3771 	EXP 	falseButton: fillColor = 'white'
+33.3938 	EXP 	trueButton: fillColor = 'white'
+33.3938 	EXP 	falseButton: fillColor = 'white'
+33.4107 	EXP 	trueButton: fillColor = 'white'
+33.4107 	EXP 	falseButton: fillColor = 'white'
+33.4272 	EXP 	trueButton: fillColor = 'white'
+33.4272 	EXP 	falseButton: fillColor = 'white'
+33.4442 	EXP 	trueButton: fillColor = 'white'
+33.4442 	EXP 	falseButton: fillColor = 'white'
+33.4611 	EXP 	trueButton: fillColor = 'white'
+33.4611 	EXP 	falseButton: fillColor = 'white'
+33.4772 	EXP 	trueButton: fillColor = 'white'
+33.4772 	EXP 	falseButton: fillColor = 'white'
+33.4945 	EXP 	trueButton: fillColor = 'white'
+33.4945 	EXP 	falseButton: fillColor = 'white'
+33.5113 	EXP 	trueButton: fillColor = 'white'
+33.5113 	EXP 	falseButton: fillColor = 'white'
+33.5279 	EXP 	trueButton: fillColor = 'white'
+33.5279 	EXP 	falseButton: fillColor = 'white'
+33.5448 	EXP 	trueButton: fillColor = 'white'
+33.5448 	EXP 	falseButton: fillColor = 'white'
+33.5613 	EXP 	trueButton: fillColor = 'white'
+33.5613 	EXP 	falseButton: fillColor = 'white'
+33.5782 	EXP 	trueButton: fillColor = 'white'
+33.5782 	EXP 	falseButton: fillColor = 'white'
+33.5948 	EXP 	trueButton: fillColor = 'white'
+33.5948 	EXP 	falseButton: fillColor = 'white'
+33.6115 	EXP 	trueButton: fillColor = 'white'
+33.6115 	EXP 	falseButton: fillColor = 'white'
+33.6269 	EXP 	trueButton: fillColor = 'white'
+33.6269 	EXP 	falseButton: fillColor = 'white'
+33.6438 	EXP 	trueButton: fillColor = 'white'
+33.6438 	EXP 	falseButton: fillColor = 'white'
+33.6609 	EXP 	trueButton: fillColor = 'white'
+33.6609 	EXP 	falseButton: fillColor = 'white'
+33.6780 	EXP 	trueButton: fillColor = 'white'
+33.6780 	EXP 	falseButton: fillColor = 'white'
+33.6947 	EXP 	trueButton: fillColor = 'white'
+33.6947 	EXP 	falseButton: fillColor = 'white'
+33.7108 	EXP 	trueButton: fillColor = 'white'
+33.7108 	EXP 	falseButton: fillColor = 'white'
+33.7270 	EXP 	trueButton: fillColor = 'white'
+33.7270 	EXP 	falseButton: fillColor = 'white'
+33.7440 	EXP 	trueButton: fillColor = 'white'
+33.7440 	EXP 	falseButton: fillColor = 'white'
+33.7614 	EXP 	trueButton: fillColor = 'white'
+33.7614 	EXP 	falseButton: fillColor = 'white'
+33.7782 	EXP 	trueButton: fillColor = 'white'
+33.7782 	EXP 	falseButton: fillColor = 'white'
+33.7949 	EXP 	trueButton: fillColor = 'white'
+33.7949 	EXP 	falseButton: fillColor = 'white'
+33.8118 	EXP 	trueButton: fillColor = 'white'
+33.8118 	EXP 	falseButton: fillColor = 'white'
+33.8278 	EXP 	trueButton: fillColor = 'white'
+33.8278 	EXP 	falseButton: fillColor = 'white'
+33.8441 	EXP 	trueButton: fillColor = 'white'
+33.8441 	EXP 	falseButton: fillColor = 'white'
+33.8608 	EXP 	trueButton: fillColor = 'white'
+33.8608 	EXP 	falseButton: fillColor = 'white'
+33.8624 	DATA 	Mouse: Left button down, pos=(907,277)
+33.8777 	EXP 	trueButton: fillColor = 'white'
+33.8777 	EXP 	falseButton: fillColor = 'white'
+33.8777 	EXP 	senseText: autoDraw = False
+33.8777 	EXP 	trueButton: autoDraw = False
+33.8777 	EXP 	trueText: autoDraw = False
+33.8777 	EXP 	falseButton: autoDraw = False
+33.8777 	EXP 	falseText: autoDraw = False
+33.8777 	EXP 	sentenceFeedback2: text = ''
+33.8777 	EXP 	sentenceFeedback2: autoDraw = True
+33.9469 	DATA 	Mouse:  Left button up, pos=(907,276)
+34.8630 	EXP 	New trial (rep=0, index=8): OrderedDict([('ID', 9), ('sentence', 'Every now and then I catch myself swimming blankly at the wall.'), ('CorrectResp', 'incorrect')])
+34.8945 	EXP 	sentenceFeedback2: autoDraw = False
+34.8945 	EXP 	sentenceFeedback2: autoDraw = False
+34.8945 	EXP 	sentenceText: text = 'Every now and then I catch myself swimming blankly at the wall.'
+34.8945 	EXP 	sentenceText: autoDraw = True
+34.8945 	EXP 	continue_12: autoDraw = True
+36.7529 	DATA 	Keypress: escape
+37.1622 	EXP 	window1: mouseVisible = True
+37.1623 	DEBUG 	Saving data for RSpan ExperimentHandler
+37.1652 	INFO 	saved data to /Users/sabrinado/Desktop/PsychoPy/RSpan/data/_RSpan_2021_Aug_29_1026.psydat
+37.1705 	INFO 	saved data to '/Users/sabrinado/Desktop/PsychoPy/RSpan/data/_RSpan_2021_Aug_29_1026.csv'
